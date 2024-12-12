@@ -1,0 +1,598 @@
+/* -------------------------------------------- медиа-запрос для ПК --------------------------------------- */
+
+@media screen and (min-width: 1001px) and (max-width: 2560px) {
+    /* header */
+
+    /* main */
+
+    /* footer */
+
+    /* gallery */
+
+    /* login */
+
+    /* registration */
+}
+
+/* -------------------------------------------- медиа-запрос для планшетов --------------------------------------- */
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+
+    /* общий стиль */
+    * {
+        font-family: "Roboto", sans-serif;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    /* header */
+
+    /* main */
+
+    /* footer */
+
+    /* gallery */
+
+    /* login */
+
+    /* registration */
+}
+
+/* -------------------------------------------- медиа-запрос для телефонов --------------------------------------- */
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+
+    /* общий стиль */
+    * {
+        font-family: "Roboto", sans-serif;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    /* header */
+
+    /* main */
+
+    /* карточки производителей */
+
+    /* общий стиль для карточек */
+    .maker_card {
+        margin-top: 20px;
+    }
+
+    /* карточки финансовых */
+
+    /* общий стиль для карточек */
+    .fin_card {
+        margin-top: 20px;
+    }
+
+    /* footer */
+
+    /* gallery */
+
+    /* login */
+
+    /* registration */
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* общий стиль */
+    * {
+        font-family: "Roboto", sans-serif;
+        box-sizing: border-box;
+        font-size: 13px;
+    }
+
+    /* контейнер уведомлений */
+    .notification-container {
+        right: 25%;
+    }
+
+    /* контейнер уведомлений при наведении */
+    .notification-container:hover {
+        right: 13%;
+    }
+
+    /* кнопка уведомлений */
+    #notification {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* иконка уведомлений */
+    #notification .icon {
+        font-size: 20px;
+    }
+
+    /* количество уведомлений */
+    #notification .badge {
+        font-size: 11px;
+    }
+
+    /* кнопка уведомлений при наведении */
+    .notification-container:hover #notification {
+        width: 180px;
+    }
+
+    /* количество уведомлений при наведении */
+    .notification-container:hover #notification .badge {
+        top: 13px;
+        right: 10px;
+        transform: none;
+    }
+
+    /* список уведомлений */
+    .notification-list {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #3f3d56;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 180px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+        z-index: 20;
+    }
+
+    /* список уведомлений при наведении */
+    .notification-container:hover .notification-list {
+        display: block;
+    }
+
+    /* элемент списка уведомлений */
+    .notification-list li {
+        padding: 10px;
+        font-size: 14px;
+        color: #EDF2F4;
+        border-bottom: 1px solid #f0f0f0;
+        cursor: pointer;
+    }
+
+
+    /* стили для ссылок */
+    .notification-list li a {
+        color: #EF233C;
+    }
+
+    /* стили для посещённых ссылок */
+    .notification-list li a:visited {
+        color: #8D99AE;
+    }
+
+    /* последний элемент списка уведомлений */
+    .notification-list li:last-child {
+        border-bottom: none;
+    }
+
+    /* элемент списка уведомлений при наведении */
+    .notification-list li:hover {
+        background-color: #1f2030;
+    }
+
+    /* стили для бургер-меню */
+    .burger-menu {
+        display: block;
+    }
+
+    /* навигация */
+    .header-nav {
+        display: none;
+        position: fixed;
+        top: 95px;
+        right: -100%;
+        left: 0%;
+        width: 250px;
+        height: calc(100% - 80px);
+        background-color: #1f2030E5;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 99;
+    }
+
+    /* навигация при активном бургер-меню */
+    .header-nav.active {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 510%;
+        border-radius: 40px;
+    }
+
+    /* ссылки на страницы */
+    .header-nav a,
+    .header-nav button {
+        margin: 10px 0;
+    }
+
+    /* анимации для бургер-меню */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* ----- стили для галереи ----- */
+    .gallery {
+        gap: 1rem;
+    }
+
+    /* элементы галереи */
+    .gallery-item {
+        flex: 1 1 250px;
+    }
+
+    /* изображения элементов галереи */
+    .gallery-item img {
+        height: 250px;
+    }
+
+    /* контейнер галереи */
+    .gallery-container {
+        padding: 1rem;
+    }
+
+    /* заголовок в галерее */
+    .gallery-item img {
+        height: 200px;
+    }
+
+    /* гифка в галерее */
+    .gallery-gif {
+        left: -27%;
+    }
+
+    /* гифка в галерее при наведении */
+    .gallery-gif:hover img {
+        transform: scale(1.05);
+    }
+
+    /* заголовок у гифки */
+    .gallery-gif-info h3 {
+        font-size: 1.2rem;
+    }
+
+    /* текст у гифки */
+    .gallery-gif-info p {
+        font-size: 15px;
+    }
+
+    /* стили для мобильного меню */
+    .burger-menu {
+        display: block;
+    }
+
+    /* фото старого автосалона */
+    #old {
+        height: 100px;
+    }
+
+    /* видео */
+    #video {
+        width: 70%;
+        height: 70%;
+    }
+
+    /* цитата в верхнем блоке */
+    h1 {
+        font-size: 18px;
+    }
+
+    /* заголовки */
+    h3 {
+        font-size: 30px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    /* основной блок */
+    body {
+        height: auto;
+    }
+
+    /* верхний блок */
+    #head {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+
+    /* подпись в верхнем блоке */
+    #head p {
+        width: 200px;
+    }
+
+    /* кнопка перехода на главную */
+    #site {
+        margin-left: -20px;
+    }
+
+    /* ссылки на страницы в навигации */
+    .header-nav a {
+        margin: 15px 0;
+        font-size: 18px;
+        width: 40%;
+        border-radius: 7px;
+        text-align: center;
+        background-color: #EF233C;
+    }
+
+    /* кнопки в навигации */
+    .header-nav button {
+        margin: 10px 0;
+        width: 40%;
+    }
+
+    /* header */
+    .header {
+        padding: 10px 20px;
+    }
+
+    /* логотип */
+    .logo {
+        font-size: 24px;
+    }
+
+    /* основной контент */
+    main {
+        height: 2000px;
+    }
+
+    /* footer */
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        top: auto;
+    }
+
+    /* элементы в ФОС */
+    #feedback select,
+    #feedback fieldset,
+    .input1,
+    .combo,
+    .inputarea,
+    .container2 {
+        width: 100%;
+    }
+
+    /* контейнер новостей */
+    .news-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        margin-left: -20px;
+        height: 20%;
+        overflow: hidden;
+    }
+
+    .box {
+        margin-top: 70px;
+    }
+}
+
+/* анимации для бургер-меню */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* элементы в верхнем блоке */
+#head blockquote,
+#head p,
+#head button {
+    position: relative;
+    z-index: 1;
+}
+
+/* медиа-запрос для устройств с максимальной шириной 480px */
+@media screen and (max-width: 480px) {
+
+    body {
+        font-size: 12px;
+    }
+
+    /* гифка в галерее */
+    .gallery-gif {
+        left: 0%;
+    }
+
+    /* навигация */
+    .header-nav {
+        display: none;
+        position: fixed;
+        top: 95px;
+        right: -100%;
+        left: 0%;
+        width: 250px;
+        height: calc(100% - 80px);
+        background-color: #1f2030E5;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 99;
+    }
+
+    /* анимации для бургер-меню */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* элементы в верхнем блоке */
+    #head blockquote,
+    #head p,
+    #head button {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* бургер-меню */
+    .burger-menu {
+        display: block;
+    }
+
+    /* header */
+    header {
+        font-size: 16px;
+    }
+
+    /* цитата в верхнем блоке */
+    #head h1 {
+        font-size: 15px;
+    }
+
+    /* автор цитаты в верхнем блоке */
+    #head cite {
+        font-size: 13px;
+    }
+
+    /* фоновая картинка */
+    #bg {
+        height: 300px;
+    }
+
+    /* кнопка скачивания */
+    #head button {
+        font-size: 13px;
+        width: 50%;
+        height: 50%;
+    }
+
+    /* подпись в верхнем блоке */
+    #head p {
+        font-size: 12px;
+    }
+
+    /* кнопки в site.html */
+    .site .buttons {
+        font-size: 12px;
+        width: 80%;
+        max-width: 250px;
+    }
+
+    /* ссылка в навигации */
+    nav a {
+        padding: 3px;
+    }
+
+
+    /* контейнер для кнопок соц.сетей */
+    .social_buttons_container {
+        gap: 10px;
+    }
+
+    /* иконка в кнопке */
+    .social_buttons img {
+        height: 30px;
+    }
+}
+
+/* ------------------------------------ стили для элементов страницы входа (для мобильных устройств) -------------------------------- */
+
+/* медиа-запрос для мобильных устройств с максимальной шириной 768px */
+@media screen and (max-width: 768px) {
+
+    /* карточка входа */
+    .login_box {
+        margin-top: 70%;
+        margin-left: 50%;
+    }
+
+    /* расположение левого квадрата */
+    .login_box #span2::before {
+        top: 80px;
+        left: -55px;
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+
+    /* расположение правого квадрата */
+    .login_box #span2:after {
+        bottom: 80px;
+        right: -55px;
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+
+    /* анимация для левого квадрата */
+    .login_box:hover #span2::before {
+        transform: translateY(160px) translateX(30px);
+    }
+
+    /* анимация для правого квадрата */
+    .login_box:hover #span2:after {
+        transform: translateY(-190px) translateX(-30px);
+    }
+}
+
+/* ------------------------------------ стили для элементов страницы регистрации (для мобильных устройств) -------------------------------- */
+
+/* медиа-запрос для мобильных устройств */
+@media screen and (max-width: 768px) {
+
+    /* карточка регистрации */
+    .reg_box {
+        margin-top: 70%;
+        margin-left: 50%;
+    }
+
+    /* расположение левого квадрата */
+    .reg_box #span2::before {
+        top: 80px;
+        left: -55px;
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+
+    /* расположение правого квадрата */
+    .reg_box #span2:after {
+        bottom: 80px;
+        right: -55px;
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+
+    /* анимация для левого квадрата */
+    .reg_box:hover #span2::before {
+        transform: translateY(160px) translateX(30px);
+    }
+
+    /* анимация для правого квадрата */
+    .reg_box:hover #span2:after {
+        transform: translateY(-190px) translateX(-30px);
+    }
+}

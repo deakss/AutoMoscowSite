@@ -1,0 +1,1416 @@
+/* основные настройки для всех элементов */
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+/* переменные */
+:root {
+  --main-color: #EF233C;
+  --second-color: #3f3d56;
+  --third-color: #1f2030;
+  --back-color: #2B2D42;
+  --text-color: #EDF2F4;
+  --sec-text-color: #8D99AE;
+  --transp-back-color: #1f20307F;
+}
+
+/* основной цвет фона */
+body {
+  background-color: var(--back-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ------------------------------- стили для header ---------------------------------------------- */
+
+/* стиль для header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 25px;
+  width: 98%;
+  margin-left: 1%;
+  background-color: #1f2030E5;
+  position: sticky;
+  top: 0;
+  border-radius: 40px;
+  z-index: 100;
+}
+
+/* стиль контейнера уведомлений */
+.notification-container {
+  position: relative;
+  right: 17%;
+  display: inline-block;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* стиль контейнера уведомлений при наведении */
+.notification-container:hover {
+  right: 13%;
+}
+
+/* стиль кнопки уведомлений */
+#notification {
+  background-color: var(--back-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* стиль иконки уведомлений */
+#notification .icon {
+  font-size: 24px;
+  transition: opacity 0.3s ease;
+}
+
+/* стиль количества уведомлений */
+#notification .badge {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  transform: translate(50%, -50%);
+  transition: top 0.3s ease, right 0.3s ease, transform 0.3s ease;
+}
+
+/* количество уведомлений при наведении */
+.notification-container:hover #notification {
+  width: 250px;
+  height: auto;
+  border-radius: 12px 12px 0 0;
+  justify-content: flex-start;
+  padding: 10px;
+  position: relative;
+}
+
+/* количество уведомлений при наведении */
+.notification-container:hover #notification .badge {
+  top: 13px;
+  right: 10px;
+  transform: none;
+}
+
+/* список уведомлений */
+.notification-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--second-color);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 250px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px;
+  z-index: 20;
+}
+
+/* список уведомлений при наведении */
+.notification-container:hover .notification-list {
+  display: block;
+}
+
+/* элемент списка уведомлений */
+.notification-list li {
+  padding: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+
+/* стили для ссылок */
+.notification-list li a {
+  color: var(--main-color);
+}
+
+/* стили для посещённых ссылок */
+.notification-list li a:visited {
+  color: #8D99AE;
+}
+
+/* последний элемент списка уведомлений */
+.notification-list li:last-child {
+  border-bottom: none;
+}
+
+/* элемент списка уведомлений при наведении */
+.notification-list li:hover {
+  background-color: var(--third-color);
+}
+
+/* стиль для абзацев истории */
+.history p {
+  text-align: justify;
+  overflow: hidden;
+}
+
+/* стиль для кнопок в header */
+header button {
+  width: 150px;
+  margin-left: 20px;
+}
+
+/* навигация в header */
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+/* стиль для логотипа в header */
+header img {
+  height: 70px;
+}
+
+/* стили для навигации в header */
+header nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* ссылка в навигации при наведении */
+nav a:hover {
+  color: var(--text-color);
+  background-color: var(--main-color);
+  border-radius: 7px;
+}
+
+/* стиль для div в header */
+header div {
+  display: flex;
+  align-items: center;
+}
+
+/* стиль для кнопок */
+.buttons {
+  color: var(--text-color);
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: var(--back-color);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 1),
+    -1px -1px 6px var(--main-color);
+  height: 45px;
+}
+
+/* кнопка при наведении */
+.buttons:hover {
+  box-shadow: 5px 5px 12px var(--main-color),
+    -1px -1px 6px rgba(0, 0, 0, 1);
+}
+
+/* кнопка при нажатии */
+.buttons:active {
+  color: #666;
+  box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 1), inset -1px -1px 6px var(--main-color);
+}
+
+header button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5, 0, 5, 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* оформление цитаты */
+header cite {
+  margin: 0;
+}
+
+/* Стили для бургер-меню */
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+}
+
+/* спаны в бургер-меню */
+.burger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: var(--text-color);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* анимации для бургер-меню */
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ------------------------------- стили для main ---------------------------------------------- */
+
+/* отступы для содержимого main */
+main {
+  color: var(--text-color);
+  flex: 1;
+}
+
+/* стиль для верхнего блока в main */
+#head {
+  position: relative;
+  text-align: center;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+/* текст в верхнем блоке */
+#head div {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+/* фоновая картинка */
+#bg {
+  opacity: 0.5;
+}
+
+/* стиль для секций main */
+main section {
+  text-align: left;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* стиль для абзацев main */
+.site main p {
+  text-indent: 25px;
+}
+
+/* стиль для заголовков main */
+main h3,
+main h4 {
+  text-align: center;
+}
+
+/* стиль для фоновой картинки */
+#bg {
+  width: 100%;
+  height: auto;
+}
+
+/* стиль для абзаца истории */
+.history {
+  color: var(--text-color);
+}
+
+/* подпись в верхнем блоке в main */
+#text {
+  text-align: center;
+}
+
+/* стиль для заголовка h1 */
+main h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* стили для ссылок */
+main a {
+  color: var(--main-color);
+}
+
+/* стили для посещённых ссылок */
+main a:visited {
+  color: #8D99AE;
+}
+
+/* стиль для кнопки скачивания */
+main div button {
+  margin-top: 10px;
+  background: linear-gradient(to right, var(--main-color), var(--second-color));
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-position 0.5s ease;
+  background-size: 200% auto;
+  background-position: right center;
+}
+
+/* стиль для кнопки скачивания при наведении */
+main div button:hover {
+  background-position: left center;
+}
+
+/* стиль для изображения старого автосалона */
+#old {
+  float: left;
+  margin: 10px;
+  border-radius: 10px;
+  width: auto;
+  height: 190px;
+}
+
+/* стиль для секций main */
+main>section {
+  font-size: 18px;
+}
+
+/* стили для заголовков */
+h3 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h5 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* стили для контейнера новостей */
+.news-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* список новостей */
+.news-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  text-align: center;
+}
+
+/* элемент списка новостей */
+.news-list li {
+  width: 100%;
+  left: 50%;
+}
+
+/* новость */
+.new {
+  width: 100%;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+/* контейнер новости */
+.new .content {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  padding: 20px 40px;
+  background: var(--transp-back-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* изображение новости */
+.new img {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+
+/* стили для кнопок пролистывания */
+.nav-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  transition: none;
+}
+
+/* кнопки пролистывания */
+.nav-btn.prev {
+  left: 0;
+}
+
+.nav-btn.next {
+  right: 0;
+}
+
+/* список частых вопросов */
+.sections ol {
+  display: inline-block;
+  text-align: left;
+}
+
+/* пункты списка */
+.sections ol li p {
+  display: inline-block;
+  text-align: left;
+}
+
+/* разделы сайта */
+.block{
+  background-color: var(--transp-back-color);
+  margin: 20px 0;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+/* текст в разделах */
+.block p{
+  padding: 20px 0;
+  text-indent: 20px;
+}
+
+/* список в разделах */
+.block ol {
+  padding: 20px;
+}
+
+/* контейнер карточек со ссылками на другие страницы */
+#link_cards {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(100% / 8);
+  padding: 30px;
+}
+
+/* карточка со ссылкой на другую страницу */
+.box {
+  position: relative;
+  width: 260px;
+  height: 400px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+/* фигура за карточкой */
+.box::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+/* эффект свечения */
+.box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+}
+
+/* перемещение фигуры при наведении */
+.box:hover:before,
+.box:hover:after {
+  transform: skewX(0deg) scaleX(1.3);
+}
+
+/* стиль двигающихся квадратиков */
+.box span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* верхний квадратик */
+.box span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: #1f20307F;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08)
+}
+
+/* расположение верхнего квадратика */
+.box span::before {
+  top: -40px;
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}
+
+/* нижний квадратик */
+.box span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: var(--transp-back-color);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  animation-delay: -1s;
+}
+
+/* расположение нижнего квадратика */
+.box span:after {
+  bottom: -40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}
+
+/* анимация для верхнего квадрата */
+.box:hover span::before {
+  transform: translateY(30px) translateX(150px);
+}
+
+/* анимация для нижнего квадрата */
+.box:hover span:after {
+  transform: translateY(-20px) translateX(-150px);
+}
+
+/* "стеклянная" карточка с формой */
+.box .content {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  padding: 20px;
+  background: var(--transp-back-color);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: var(--text-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .content p {
+  text-align: center;
+}
+
+.box .content h2 {
+  font-size: 40px;
+}
+
+/* цвет фигуры за карточками */
+#box1:before,
+#box1:after {
+  background: linear-gradient(315deg, var(--second-color), #7514b6);
+}
+
+#box2:before,
+#box2:after {
+  background: linear-gradient(315deg, var(--second-color), #e44c93);
+}
+
+#box3:before,
+#box3:after {
+  background: linear-gradient(315deg, var(--second-color), var(--main-color));
+}
+
+#box4:before,
+#box4:after {
+  background: linear-gradient(315deg, var(--second-color), #2417da);
+}
+
+/* стиль для кнопок в карточках-ссылках */
+.buttons_link {
+  color: var(--text-color);
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 1),
+    -1px -1px 6px var(--main-color);
+  height: 45px;
+}
+
+
+/* кнопка при наведении */
+.buttons_link:hover {
+  box-shadow: 5px 5px 12px var(--main-color),
+    -1px -1px 6px rgba(0, 0, 0, 1);
+}
+
+/* кнопка при нажатии */
+.buttons_link:active {
+  color: #666;
+  box-shadow: inset 5px 5px 12px rgba(0, 0, 0, 1), inset -1px -1px 6px var(--main-color);
+}
+
+/* ------------------ карточки партнёров ---------------- */
+
+.partner_cards {
+  gap: calc(100% / 5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* --------- карточки производителей --------- */
+
+/* общий стиль для карточек */
+.maker_card {
+  position: relative;
+  overflow: visible;
+  text-align: center;
+  width: 260px;
+  height: 400px;
+  box-shadow: 0px 0px 10px 1px #000000ee;
+  border-radius: 5px;
+  background-color: var(--third-color);
+  flex: 0 0 auto;
+  transition: all 0.2s ease-in-out;
+}
+
+/* полукруг с логотипом */
+.card_top {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, #ff0055, #ff3377);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* круг вокруг логотипа */
+.logo_circle {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* логотип */
+.logo_circle img {
+  height: 50px;
+  width: auto;
+}
+
+/* блюр карточек при наведении */
+.partner_cards:hover .maker_card:not(:hover) {
+  filter: blur(5px);
+}
+
+/* увеличение выбранной карточки */
+.partner_cards .maker_card:hover {
+  filter: none;
+  z-index: 1;
+  transform: scale(1.1);
+}
+
+/* содержимое карточки */
+.maker_card .content {
+  position: relative;
+  height: 300px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+/* заголовок в карточке */
+.maker_card .content h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* текст в карточке */
+.maker_card .content p {
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0 20px;
+}
+
+/* цвета полукругов */
+#toyota_card {
+  background: linear-gradient(to bottom, #EB0A1E, #000000);
+}
+
+#bmw_card {
+  background: linear-gradient(to bottom, #0068af, #ffffff);
+}
+
+#audi_card {
+  background: linear-gradient(to bottom, #e21d38, #c9cbcc);
+}
+
+/* --------- карточки фин.партнёров --------- */
+
+/* общий стиль для карточек */
+.fin_card {
+  position: relative;
+  overflow: visible;
+  text-align: center;
+  width: 260px;
+  height: 400px;
+  box-shadow: 0px 0px 10px 1px #000000ee;
+  border-radius: 5px;
+  background-color: var(--third-color);
+  flex: 0 0 auto;
+  transition: all 0.2s ease-in-out;
+}
+
+/* цвета полукругов */
+#sber_card {
+  background: linear-gradient(to bottom, #9ecc42, #169b38);
+}
+
+#vtb_card {
+  background: linear-gradient(to bottom, #009fe0, #263974);
+}
+
+/* круг вокруг логотипа */
+.fin_card .logo_circle {
+  width: 90%;
+  height: 90px;
+  background: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* логотип */
+.fin_card .logo_circle img {
+  width: 80%;
+  height: auto;
+}
+
+/* блюр при наведении */
+.partner_cards:hover .fin_card:not(:hover) {
+  filter:brightness(0.1);
+}
+
+/* увеличение выбранной карточки */
+.partner_cards .fin_card:hover {
+  filter: none;
+  z-index: 1;
+  transform: scale(1.1);
+}
+
+/* содержимое карточки */
+.fin_card .content {
+  position: relative;
+  height: 300px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+/* заголовок в карточке */
+.fin_card .content h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* текст в карточке */
+.fin_card .content p {
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0 20px;
+}
+
+/* --------- карточки страховых --------- */
+
+.strah_cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+  margin: 20px 0;
+}
+
+/* карточка страховой */
+.strah_card {
+  overflow: visible;
+  width: 260px;
+  height: 400px;
+  margin: 20px 0;
+}
+
+/* содержимое карточки */
+.strah_card .content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px #000000ee;
+  border-radius: 5px;
+}
+
+/* стороны карточки */
+.front,
+.back {
+  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* сторона с логотипом */
+.back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Росгосстрах */
+#rgs_card .back::before {
+  background: linear-gradient(90deg, transparent, #c1914d, #c1914d, #c1914d, #c1914d, transparent);
+  animation: rotation_481 3s infinite linear;
+}
+
+/* АльфаСтрахование */
+#alfa_card .back::before {
+  background: linear-gradient(90deg, transparent, #ca0032, #ca0032, #ca0032, #ca0032, transparent);
+  animation: rotation_481 3s infinite linear;
+}
+
+/* Ингосстрах */
+#ingos_card .back::before {
+  background: linear-gradient(90deg, transparent, #0c4ba3, #0c4ba3, #0c4ba3, #0c4ba3, transparent);
+  animation: rotation_481 3s infinite linear;
+}
+
+/* Общие стили для анимации */
+.back::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 150px;
+  height: 160%;
+}
+
+/* содержимое на лицевой стороне */
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: var(--third-color);
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* логотип на лицевой стороне */
+.back-content img {
+  width: 90%;
+}
+
+/* анимация при наведении на карточку */
+.strah_card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* обратная сторона */
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+/* содержимое на обратной стороне */
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* название на обратной стороне */
+.front-content .badge {
+  background-color: #00000055;
+  padding: 2px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  width: fit-content;
+}
+
+/* описание на обратной стороне */
+.description {
+  box-shadow: 0px 0px 10px 5px #00000088;
+  width: 100%;
+  padding: 10px;
+  background-color: #00000099;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+/* заголовок на обратной стороне */
+.title {
+  font-size: 13px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* текст на обратной стороне */
+.title p {
+  text-align: center;
+}
+
+/* подпись на обратной стороне */
+.front-content .podp {
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ссылка на обратной стороне */
+.card-footer {
+  color: #ffffff88;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* кружки на обратной стороне */
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* кружки */
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  filter: blur(15px);
+  animation: floating 2600ms infinite linear;
+}
+
+/* нижний правый кружок */
+#bottom {
+  left: 50px;
+  top: 0px;
+  width: 150px;
+  height: 150px;
+  animation-delay: -800ms;
+}
+
+/* правый верхний кружок */
+#right {
+  left: 160px;
+  top: -80px;
+  width: 30px;
+  height: 30px;
+  animation-delay: -1800ms;
+}
+
+/* Росгосстрах */
+.circle.rgs {
+  background-color: goldenrod;
+}
+#rgs_card #right {
+  background-color: white;
+}
+#rgs_card #bottom {
+  background-color: var(--main-color);
+}
+
+/* АльфаСтрахование */
+.circle.alfa {
+  background-color: white;
+}
+#alfa_card #right {
+  background-color: var(--main-color);
+}
+#alfa_card #bottom {
+  background-color: var(--main-color);
+}
+
+/* Ингосстрах */
+.circle.ingos {
+  background-color: var(--third-color);
+}
+#ingos_card #right {
+  background-color: blue;
+}
+#ingos_card #bottom {
+  background-color: darkblue;
+}
+
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ------------------------------- стили для footer ---------------------------------------------- */
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--third-color);
+  color: var(--text-color);
+}
+
+/* стили для ссылок */
+footer address a {
+  color: var(--main-color);
+}
+
+/* стили для посещённых ссылок */
+footer address a:visited {
+  color: #8D99AE;
+}
+
+/* контейнер для кнопок соц.сетей */
+.social_buttons_container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+/* кнопки соц.сети */
+.social_buttons {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--back-color);
+  border-radius: 9999px;
+  border: 1px solid var(--second-color);
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+/* псевдоэлемент для градиента */
+.social_buttons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--back-color);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.social_buttons:hover::before {
+  opacity: 1;
+}
+
+/* градиенты для каждой кнопки */
+#vk::before {
+  background: linear-gradient(315deg, var(--second-color), #0077ff);
+}
+
+#inst::before {
+  background: linear-gradient(315deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+#tg::before {
+  background: linear-gradient(315deg, var(--second-color), #25a2e0);
+}
+
+#yt::before {
+  background: linear-gradient(315deg, var(--second-color), #fe0000);
+}
+
+#x::before {
+  background: linear-gradient(315deg, var(--second-color), black);
+}
+
+/* иконка в кнопке */
+.social_buttons img {
+  height: 40px;
+  position: relative;
+}
+
+
+/* ----- стили для ФОС ----- */
+
+/* форма */
+#feedback {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  height: 550px;
+  margin-bottom: 20px;
+}
+
+/* поле в ФОС */
+#feedback fieldset {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 500px;
+}
+
+/* select в ФОС */
+#feedback select {
+  background: none;
+  border: none;
+  outline: none;
+  width: 460px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
+
+/* элементы в select */
+#feedback select option {
+  background-color: var(--third-color);
+}
+
+/* input в ФОС*/
+.input1 {
+  background: none;
+  border: none;
+  outline: none;
+  width: 460px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
+
+/* textarea в ФОС */
+.inputarea {
+  background: none;
+  border: none;
+  outline: none;
+  width: 460px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  height: 200px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+  resize: none;
+}
+
+/* чекбокс в ФОС */
+.container2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container2 {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* создание кастомного чекбокса */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #ccc;
+  border-radius: 100%;
+  background: none;
+  box-shadow: 3px 3px 5px rgb(5, 5, 5),
+    -3px -3px 5px rgb(5, 5, 5);
+  transition-duration: 0.5s;
+}
+
+/* изменение цвета чекбокса при нажатии */
+.container2 input:checked~.checkmark {
+  box-shadow: inset 3px 3px 5px rgb(5, 5, 5);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+/* изменение иконки чекбокса при нажатии */
+.container2 input:checked~.checkmark:after {
+  opacity: 1;
+}
+
+
+.container2 .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid darkgray;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+/* текст согласия с обработкой персональных данных */
+.form_agree_text {
+  font-size: 14px;
+}
+
+
+/* стили для кнопки отправки */
+#send {
+  margin-top: 10px;
+  background-color: var(--third-color);
+}
+
+/* стиль для карты */
+.map {
+  width: 100%;
+  height: 400px;
+}

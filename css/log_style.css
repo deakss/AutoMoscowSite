@@ -1,0 +1,315 @@
+/* ------------------------------------ стили для элементов страницы входа -------------------------------- */
+
+/* стили для main */
+#login {
+    height: 100%;
+  }
+  
+  /* стили для формы */
+  .card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* форма */
+  form {
+    gap: 5px;
+  }
+  
+  /* кнопка в форме */
+  form button {
+    width: 200px;
+  }
+  
+  /* контейнер в форме */
+  .container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #EDF2F4;
+    margin-top: 20px;
+  }
+  
+  /* текст в форме */
+  .container .label {
+    font-size: 15px;
+    padding-left: 10px;
+    position: absolute;
+    top: 13px;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+  
+  /* поле ввода */
+  .input {
+    width: 200px;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: #EDF2F4;
+    font-size: 15px;
+    background: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+      -1px -1px 6px #EF233C;
+  }
+  
+  /* поле ввода при фокусировке */  
+  .input:focus {
+    border: 2px solid transparent;
+    color: #EDF2F4;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+      -1px -1px 6px #EF233C,
+      inset 3px 3px 10px rgba(0, 0, 0, 1),
+      inset -1px -1px 6px #EF233C;
+  }
+  
+  /* текст в форме при фокусировке */
+  .container .input:valid~.label,
+  .container .input:focus~.label {
+    transition: 0.3s;
+    padding-left: 2px;
+    transform: translateY(-35px);
+  }
+  
+  .container .input:valid,
+  .container .input:focus {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+      -1px -1px 6px #EF233C,
+      inset 3px 3px 10px rgba(0, 0, 0, 1),
+      inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+
+  /* контейнер карточек со ссылками на другие страницы */
+
+
+/* карточка со ссылкой на другую страницу */
+.login_box {
+  position: relative;
+  width: 260px;
+  height: 400px;
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 1;
+  margin-top: 20%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* фигура за карточкой */
+.login_box::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(-15deg);
+  transition: 0.5s;
+}
+
+/* эффект свечения */
+.login_box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(-15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+}
+
+/* перемещение фигуры при наведении */
+.login_box:hover:before,
+.login_box:hover:after {
+  transform: skewX(15deg) scaleX(1.1);
+}
+
+/* стиль двигающихся квадратиков */
+.login_box span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* верхний квадратик */
+.login_box #span1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: #1f20307F;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08)
+}
+
+/* расположение верхнего квадратика */
+.login_box #span1::before {
+  top: -70px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+  z-index: 9999;
+}
+
+/* нижний квадратик */
+.login_box #span1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: var(--transp-back-color);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  animation-delay: -1s;
+}
+
+/* расположение нижнего квадратика */
+.login_box #span1:after {
+  bottom: -40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+}
+
+/* анимация для верхнего квадрата */
+.login_box:hover #span1::before {
+  transform: translateY(30px) translateX(150px);
+}
+
+/* анимация для нижнего квадрата */
+.login_box:hover #span1:after {
+  transform: translateY(-20px) translateX(-150px);
+}
+
+/* левый квадрат */
+.login_box #span2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: #1f20307F;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08)
+}
+
+/* расположение левого квадрата */
+.login_box #span2::before {
+  top: 80px;
+  left: -90px;
+  width: 60px;
+  height: 60px;
+  opacity: 1;
+}
+
+/* правый квадрат */
+.login_box #span2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: var(--transp-back-color);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  animation-delay: -1s;
+}
+
+/* расположение правого квадрата */
+.login_box #span2:after {
+  bottom: 80px;
+  right: -90px;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}
+
+/* анимация для левого квадрата */
+.login_box:hover #span2::before {
+  transform: translateY(160px) translateX(50px);
+}
+
+/* анимация для правого квадрата */
+.login_box:hover #span2:after {
+  transform: translateY(-190px) translateX(-50px);
+}
+
+/* "стеклянная" карточка с формой */
+.login_box .content {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  padding: 20px;
+  background: var(--transp-back-color);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: var(--text-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* цвет фигуры за карточкой */
+.login_box:before,
+.login_box:after {
+  background: linear-gradient(180deg, var(--second-color), var(--main-color));
+}
+
+/* стиль для кнопок в карточках-ссылках */
+.buttons_link {
+  color: var(--text-color);
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 1),
+    -1px -1px 6px var(--main-color);
+  height: 45px;
+}

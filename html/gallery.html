@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- подключение стилей -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/mobile_style.css">
+    <link rel="stylesheet" href="/css/gal_style.css">
+    <!-- подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- название -->
+    <title>Галерея AutoMoscow</title>
+    <!-- иконка -->
+    <link rel="icon" href="/images/Logo.ico " sizes="any">
+</head>
+
+<body>
+    <header>
+        <div>
+            <!-- кнопка-ссылка на главную страницу в виде логотипа -->
+            <button id="site" onclick="window.location.href='site.html';">
+                <img src="/images/LogoBl.png" alt="Logo">
+            </button>
+        </div>
+        <!-- контейнер уведомлений -->
+        <div class="notification-container">
+            <!-- кнопка уведомлений -->
+            <button id="notification">
+                <span class="icon">🔔</span>
+                <span class="badge">4</span>
+            </button>
+            <!-- список уведомлений -->
+            <ul class="notification-list">
+                <!-- элемент уведомления -->
+                <li><a href="https://auto.ru/cars/used/sale/skoda/octavia/1126243299-78f03bc2/">Skoda Octavia III со
+                        скидкой 10%🤑</a></li>
+                <li><a href="https://auto.ru/cars/used/sale/porsche/taycan/1126157803-ac285a5d/">Новинка - Porsche
+                        Taycan 4S 2021 года выпуска</a></li>
+                <li><a href="https://auto.ru/cars/used/sale/ford/mustang/1126197403-286606bf/">Ford Mustang 2023 года
+                        выпуска снова в продаже</a></li>
+                <li><a href="https://auto.ru/cars/used/sale/nissan/silvia/1106644939-b56e971d/">Японская классика: в
+                        продаже появился Nissan Silvia S15 1999 года выпуска</a></li>
+            </ul>
+        </div>
+        <!-- бургер-меню -->
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="header-nav">
+            <!-- ссылки на другие страницы -->
+            <a href='catalog.html'>Каталог</a>
+            <a href='cart.html'>Корзина</a>
+            <a href='favourite.html'>Избранное</a>
+            <a href='orders.html'>Заказы</a>
+            <a href="gallery.html">Галерея</a>
+            <!-- кнопки входа и регистрации -->
+            <button class="buttons" onclick="window.location.href='login.html';">Вход</button>
+            <button class="buttons" onclick="window.location.href='registration.html';">Регистрация</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- секция галереи -->
+        <section class="gallery-container">
+            <h1>Галерея AutoMoscow</h1>
+            <div class="gallery-gif">
+                <img id="gif" src="https://media1.tenor.com/m/OABQXEPZmoAAAAAd/happy-birthday-genesis-coupe.gif"
+                    alt="Авто">
+                <div class="gallery-gif-info">
+                    <h3>Красиво, правда?</h3>
+                    <p>Если согласны, заглядывайте в каталог и берите себе такую же. Если нет - снова посмотрите
+                        галерею.</p>
+                </div>
+            </div>
+            <div class="gallery">
+                <!-- элементы галереи -->
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=795764ed3244deb97229887dd36f7d19_l-5678271-images-thumbs&n=13"
+                        alt="Седан" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Седаны</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=2a44def5efea1e50e12b43f73624b976_l-5220575-images-thumbs&n=13"
+                        alt="Хэтчбек" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Хэтчбеки</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://a.d-cd.net/rQscyZUEAIOOzd6kOqOrsF8N-Kw-1920.jpg" alt="Лифтбек" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Лифтбеки</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://a.d-cd.net/Dg1N_QQrZTdiPHGWaF43xhxbYW0-1920.jpg" alt="Универсал" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Универсалы</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=c2a0a1a6e87029db1006b9c10ee36bf0_l-8218044-images-thumbs&n=13"
+                        alt="Купе" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Купе</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.dzeninfra.ru/get-zen_doc/125920/pub_64e5ad83190abf206ae273c8_64e877df4a116e5605305427/scale_1200"
+                        alt="Фургон" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Фургоны</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=cfc0b5e1bf57888d0c942ad10da8ae20_l-5293988-images-thumbs&n=13"
+                        alt="Лимузин" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Лимузины</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=2821076f6cc15706cbe3e6c4cbf07867c1cadaec-7937305-images-thumbs&n=13"
+                        alt="Электромобиль" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Электромобили</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=d727b862a7bffe3bfd17484185e1d633_l-4518897-images-thumbs&n=13"
+                        alt="Внедорожник" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Внедорожники</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=e3ab641a1d8b4160dd19b757e9b65f4090f5d0ba-5235529-images-thumbs&n=13"
+                        alt="Премиум-автомобиль" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Премиум-автомобили</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=2a0000019393baa502cc6c1fe8bac25ca74d-1370901-fast-images&n=13"
+                        alt="Новинка" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Новинки</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=7a759c1b308cc37f0fd344a64a080d7d_l-5353188-images-thumbs&n=13"
+                        alt="Минивэн" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Минивэны</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=7c989d1c43542658f52d973f1e53c952_l-5235022-images-thumbs&n=13"
+                        alt="Спортивный автомобиль" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Спортивные автомобили</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=3bbd9e01a45d7862e6a22a369305cb19_l-5340383-images-thumbs&n=13"
+                        alt="Японская классика" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Японская классика</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=f9b8ed809bfa2d8603625c735b78a4ec_l-3524219-images-thumbs&n=13"
+                        alt="Авто для дрифта" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Авто для дрифта</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=b6feafe618a4916179507523694533d5_l-5679824-images-thumbs&n=13"
+                        alt="Классические автомобиль" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Классические автомобили</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=db356ae1ed32c4bced1cfd3e8e243ea8_l-12610597-images-thumbs&n=13"
+                        alt="Кабриолет" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Кабриолеты</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=1465cef468e4806906c10cb5258dc7af_l-10375634-images-thumbs&n=13"
+                        alt="Кэдди" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Кэдди</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=58b896a07dbb8745c7d2e630d3708c0f_l-5232642-images-thumbs&n=13"
+                        alt="Пикап" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Пикапы</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=4bba376dd20e30bc6a42b8ef314acc29_l-8372844-images-thumbs&n=13"
+                        alt="Автодом" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Автодома</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/originals/ab/90/f0/ab90f05a56b35782d5944f03ad4a6bf1.jpg"
+                        alt="Элитный автомобиль" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h3>Элитные автомобили</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- футер -->
+    <footer>
+        <h3 id="cont">Контакты</h3>
+        <address>
+            <!-- ссылка на номер телефона -->
+            <p>Круглосуточная поддержка: <a href="tel:79777020241">+7 (977) 702-02-41</a></p>
+            <!-- ссылка на почтовый клиент -->
+            <p>Поддержка в письмах: <a href="mailto:de.akss@mail.ru ">de.akss@mail.ru</a></p>
+        </address>
+        <div class="social_buttons_container">
+            <!-- кнопка для vk -->
+            <button class="social_buttons" id="vk" onclick="window.location.href='https://vk.com';">
+                <img src="/images/vk.png" alt="VK">
+            </button>
+
+            <!-- кнопка для telegram -->
+            <button class="social_buttons" id="tg" onclick="window.location.href='https://t.me/Romancev768';">
+                <img src="/images/tg.png" alt="Telegram">
+            </button>
+
+            <!-- кнопка для instagram -->
+            <button class="social_buttons" id="inst" onclick="window.location.href='https://www.instagram.com';">
+                <img src="/images/inst.png" alt="Instagram">
+            </button>
+
+            <!-- кнопка для youtube -->
+            <button class="social_buttons" id="yt" onclick="window.location.href='https://www.youtube.com';">
+                <img src="/images/yt.png" alt="Youtube">
+            </button>
+
+            <!-- кнопка для X -->
+            <button class="social_buttons" id="x" onclick="window.location.href='https://www.x.com';">
+                <img src="/images/tw.png" alt="X">
+            </button>
+        </div>
+        <!-- форма обратной связи -->
+        <form id="feedback">
+            <fieldset>
+                <legend>Обратная связь</legend>
+                <!-- выпадающий список -->
+                <label>Выберите тип обратной связи:</label>
+                <select class="combo">
+                    <option value="1">Выберите тип</option>
+                    <option value="2">Отзыв</option>
+                    <option value="3">Сообщение об ошибке</option>
+                    <option value="4">Вопрос</option>
+                </select>
+                <!-- поля ввода информации -->
+                <label for="name">Имя:</label>
+                <input class="input1" type="text" id="name" name="name" required maxlength="20">
+                <label for="phone">Номер телефона:</label>
+                <input class="input1" type="tel" id="phone" name="phone" required maxlength="11">
+                <label for="message">Сообщение:</label>
+                <textarea class="inputarea" id="message" name="message" required></textarea>
+                <!-- чекбокс -->
+                <label class="container2">
+                    <input type="checkbox" checked="checked">
+                    <div class="checkmark"></div>
+                    <span class="form_agree_text">Я принимаю условия конфиденциальности</span>
+                </label>
+                <!-- кнопка отправки формы -->
+                <button class="buttons" id="send" type="submit">Отправить</button>
+            </fieldset>
+        </form>
+        <!-- карта -->
+        <iframe class="map"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A31f28ac98be6ec5e2a0f730310ec5b5465d20e5bab55833af29b1d20804a0042&amp;source=constructor"
+            frameborder="0" alt="Карта"></iframe>
+    </footer>
+    <!-- подключение скриптов -->
+    <script src="/js/burger.js"></script>
+</body>
+
+</html>
