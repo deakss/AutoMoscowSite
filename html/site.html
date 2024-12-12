@@ -41,8 +41,7 @@
                         скидкой 10%🤑</a></li>
                 <li><a href="https://auto.ru/cars/used/sale/porsche/taycan/1126157803-ac285a5d/">Новинка - Porsche
                         Taycan 4S 2021 года выпуска</a></li>
-                <li><a href="https://auto.ru/cars/used/sale/ford/mustang/1126197403-286606bf/">Ford Mustang 2023
-                        года
+                <li><a href="https://auto.ru/cars/used/sale/ford/mustang/1126197403-286606bf/">Ford Mustang 2023 года
                         выпуска снова в продаже</a></li>
                 <li><a href="https://auto.ru/cars/used/sale/nissan/silvia/1106644939-b56e971d/">Японская классика: в
                         продаже появился Nissan Silvia S15 1999 года выпуска</a></li>
@@ -56,18 +55,17 @@
         </div>
         <nav class="header-nav">
             <!-- ссылки на другие страницы -->
-            <a href='catalog.html'>Каталог</a>
-            <a href='cart.html'>Корзина</a>
-            <a href='favourite.html'>Избранное</a>
-            <a href='orders.html'>Заказы</a>
-            <a href="gallery.html">Галерея</a>
+            <a id="catalog" href='catalog.html'>Каталог</a>
+            <a id="cart" href='cart.html'>Корзина</a>
+            <a id="favourite" href='favourite.html'>Избранное</a>
+            <a id="orders" href='orders.html'>Заказы</a>
+            <a id="gallery" href="gallery.html">Галерея</a>
             <!-- кнопки входа и регистрации -->
-            <button class="buttons" onclick="window.location.href='login.html';">Вход</button>
-            <button class="buttons" onclick="window.location.href='registration.html';">Регистрация</button>
+            <button class="buttons" id="log" onclick="window.location.href='login.html';">Авторизация</button>
         </nav>
     </header>
 
-    <main>
+    <main id="sitemain">
         <!-- основное содержимое страницы -->
         <section>
             <div id="head">
@@ -113,7 +111,6 @@
                     <div class="content">
                         <h2>Избранное</h2>
                         <p>Добавляйте в избранное те автомобили, что запали вам в сердце❤️</p>
-                        <p class="podp">Требуется авторизация</p>
                         <button class="buttons_link" onclick="window.location.href='favourite.html';">Заполнить
                             сердце</button>
                     </div>
@@ -123,7 +120,6 @@
                     <div class="content">
                         <h2>Корзина</h2>
                         <p>А если решились на покупку — корзина под рукой💙</p>
-                        <p class="podp">Требуется авторизация</p>
                         <button class="buttons_link" onclick="window.location.href='cart.html';">Принять
                             решение</button>
                     </div>
@@ -196,14 +192,11 @@
                     Мы создаем пространство, где каждый клиент может почувствовать себя уверенно, а выбор автомобиля
                     становится
                     радостным событием.</p>
-                </div>
-                <!-- видео -->
-                <div class="video-container" style="text-align: center;">
-                    <iframe id="video" width="1280" height="720"
-                        src="https://rutube.ru/play/embed/f65a1e183d6a6f9d56b8a483ed10e6c2/?skinColor=e53935"
-                        frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen
-                        allowFullScreen></iframe>
-                </div>
+            </div>
+            <!-- видео -->
+            <iframe id="video" height="720" width="1280" src="https://rutube.ru/play/embed/f65a1e183d6a6f9d56b8a483ed10e6c2/?skinColor=e53935"
+                frameBorder="0" allow="clipboard-write; autoplay" allowwebkitAllowFullScreen mozallowfullscreen
+                allowFullScreen></iframe>
             <div>
                 <!-- --- партнёры производители --- -->
                 <h4>Наши партнёры</h4>
@@ -482,12 +475,13 @@
             <div class="block">
                 <h3 id="faq">Частые вопросы</h3>
                 <ol>
-                    <li>Q: Принимаете ли вы оптовые заказы? <br> A: Да, мы принимаем оптовые заказы. Детали и сумма таких
-                            заказов
-                            могут измениться после согласования с менеджером.</p>
+                    <li>Q: Принимаете ли вы оптовые заказы? <br> A: Да, мы принимаем оптовые заказы. Детали и сумма
+                        таких
+                        заказов
+                        могут измениться после согласования с менеджером.</p>
                     </li>
                     <li>Q: Как можно оплатить покупку? <br>A: Вы можете оплатить покупку следующими способами:
-                            <!-- вложенный список -->
+                        <!-- вложенный список -->
                         <ul type="disc">
                             <li>банковской картой</li>
                             <li>переводом на счёт компании</li>

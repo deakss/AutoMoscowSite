@@ -1,104 +1,27 @@
-/* ------------------------------------ стили для элементов страницы входа -------------------------------- */
+/* *! ------------------------------------ стили для элементов страницы входа -------------------------------- */
 
 /* стили для main */
 #login {
-    height: 100%;
-  }
-  
-  /* стили для формы */
-  .card form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* форма */
-  form {
-    gap: 5px;
-  }
-  
-  /* кнопка в форме */
-  form button {
-    width: 200px;
-  }
-  
-  /* контейнер в форме */
-  .container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    color: #EDF2F4;
-    margin-top: 20px;
-  }
-  
-  /* текст в форме */
-  .container .label {
-    font-size: 15px;
-    padding-left: 10px;
-    position: absolute;
-    top: 13px;
-    transition: 0.3s;
-    pointer-events: none;
-  }
-  
-  /* поле ввода */
-  .input {
-    width: 200px;
-    height: 45px;
-    border: none;
-    outline: none;
-    padding: 0px 7px;
-    border-radius: 6px;
-    color: #EDF2F4;
-    font-size: 15px;
-    background: none;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
-      -1px -1px 6px #EF233C;
-  }
-  
-  /* поле ввода при фокусировке */  
-  .input:focus {
-    border: 2px solid transparent;
-    color: #EDF2F4;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
-      -1px -1px 6px #EF233C,
-      inset 3px 3px 10px rgba(0, 0, 0, 1),
-      inset -1px -1px 6px #EF233C;
-  }
-  
-  /* текст в форме при фокусировке */
-  .container .input:valid~.label,
-  .container .input:focus~.label {
-    transition: 0.3s;
-    padding-left: 2px;
-    transform: translateY(-35px);
-  }
-  
-  .container .input:valid,
-  .container .input:focus {
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
-      -1px -1px 6px #EF233C,
-      inset 3px 3px 10px rgba(0, 0, 0, 1),
-      inset -1px -1px 6px rgba(255, 255, 255, 0.4);
-  }
+  height: 100%;
+  display: grid;
+  grid-template-columns: [c1] auto [c2];
+  grid-template-rows: [r1] 50% [r2] 400px [r3] 50% [r4] ;
+  justify-items: center;
+  align-items: center;
+}
 
-  /* контейнер карточек со ссылками на другие страницы */
-
-
-/* карточка со ссылкой на другую страницу */
+/* контейер формы */
 .login_box {
-  position: relative;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
   width: 260px;
   height: 400px;
-  margin-top: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
   z-index: 1;
-  margin-top: 20%;
-  margin-left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0%, 0%);
 }
 
 
@@ -300,16 +223,110 @@
   background: linear-gradient(180deg, var(--second-color), var(--main-color));
 }
 
-/* стиль для кнопок в карточках-ссылках */
-.buttons_link {
-  color: var(--text-color);
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s;
-  box-shadow: 5px 5px 12px rgba(0, 0, 0, 1),
-    -1px -1px 6px var(--main-color);
+/* форма */
+form {
+  gap: 5px;
+  display: grid;
+  grid-template-columns: [c1] auto [c2];
+  grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5] auto [r6];
+  place-items: center;
+  row-gap: 25px;
+}
+
+#logcont {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  margin-top: 5px;
+}
+
+#passcont {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+#butcont {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+#forgotcont {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  justify-self: start;
+}
+
+#regcont {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  justify-self: start;
+  padding-bottom: 20px;
+}
+
+/* контейнер в форме */
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #EDF2F4;
+}
+
+/* текст в форме */
+.container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 13px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+/* поле ввода */
+.input {
+  width: 200px;
   height: 45px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: #EDF2F4;
+  font-size: 15px;
+  background: none;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px #EF233C;
+}
+
+/* поле ввода при фокусировке */
+.input:focus {
+  border: 2px solid transparent;
+  color: #EDF2F4;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px #EF233C,
+    inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px #EF233C;
+}
+
+/* текст в форме при фокусировке */
+.container .input:valid~.label,
+.container .input:focus~.label {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+
+.container .input:valid,
+.container .input:focus {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px #EF233C,
+    inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+/* стиль для кнопок в карточке */
+.content .buttons_link {
+  width: 200px;
+}
+
+/* кнопка в форме */
+form button {
+  width: 200px;
 }
