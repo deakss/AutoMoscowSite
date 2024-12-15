@@ -1,32 +1,54 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // элементы для работы с новостями
     const newsList = document.querySelector('.news-list');
     const prevBtn = document.querySelector('.nav-btn.prev');
     const nextBtn = document.querySelector('.nav-btn.next');
     const newsItems = document.querySelectorAll('.news-list li');
-    
+
     // параметры прокрутки новостей
     let scrollPosition = 0;
-    const itemWidth = 330; // ширина элемента + отступ
-    const containerWidth = document.querySelector('.news-container').clientWidth - 100; // вычитаем padding
-    const visibleItems = Math.floor(containerWidth / itemWidth);
-    const maxScroll = Math.max(0, (newsItems.length - visibleItems) * itemWidth);
-    
-    // логика прокрутки новостей
+
+    // * вычисление ширины новости
+    function calculateItemWidth() {
+        // ширина элемента, включая отступы
+        return newsItems[0].offsetWidth + parseFloat(getComputedStyle(newsItems[0]).marginRight);
+    }
+
+    // * вычисление максимального пролистывания
+    function calculateMaxScroll() {
+        // ширина контейнера
+        const containerWidth = document.querySelector('.news-container').clientWidth;
+        // ширина элемента, включая отступы
+        const itemWidth = calculateItemWidth();
+        // количество видимых элементов
+        const visibleItems = Math.floor(containerWidth / itemWidth);
+        // максимальная прокрутка
+        return Math.max(0, (newsItems.length - visibleItems) * itemWidth);
+    }
+
+    // * обновление видимости кнопок
     function updateButtons() {
+        const maxScroll = calculateMaxScroll();
         prevBtn.style.visibility = scrollPosition <= 0 ? 'hidden' : 'visible';
         nextBtn.style.visibility = scrollPosition >= maxScroll ? 'hidden' : 'visible';
     }
 
+    // * обновление прокрученного списка
     function updateScrollPosition(direction) {
+        const itemWidth = calculateItemWidth();
+        const maxScroll = calculateMaxScroll();
         const oldPosition = scrollPosition;
-        
+
+        // если нажата правая кнопка, то прокрутить вправо
         if (direction === 'next' && scrollPosition < maxScroll) {
             scrollPosition = Math.min(scrollPosition + itemWidth, maxScroll);
-        } else if (direction === 'prev' && scrollPosition > 0) {
+        }
+        // если нажата левая кнопка, то прокрутить влево (удивительно)
+        else if (direction === 'prev' && scrollPosition > 0) {
             scrollPosition = Math.max(scrollPosition - itemWidth, 0);
         }
 
+        // если еще не достигнут край, то прокрутить
         if (oldPosition !== scrollPosition) {
             newsList.style.transition = 'transform 0.5s ease-in-out';
             newsList.style.transform = `translateX(-${scrollPosition}px)`;
@@ -34,27 +56,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    newsList.addEventListener('transitionend', function() {
+    // обработка завершения анимации
+    newsList.addEventListener('transitionend', function () {
         newsList.style.transition = '';
     });
 
+    // обработка нажатия на кнопки
     prevBtn.addEventListener('click', () => updateScrollPosition('prev'));
     nextBtn.addEventListener('click', () => updateScrollPosition('next'));
-    
-    // инициализация
+
+    // обновление кнопок
     updateButtons();
 
     // адаптация под размер экрана
-    window.addEventListener('resize', function() {
-        const newContainerWidth = document.querySelector('.news-container').clientWidth - 100;
-        const newVisibleItems = Math.floor(newContainerWidth / itemWidth);
-        const newMaxScroll = Math.max(0, (newsItems.length - newVisibleItems) * itemWidth);
-        
-        if (scrollPosition > newMaxScroll) {
-            scrollPosition = newMaxScroll;
+    window.addEventListener('resize', function () {
+        const maxScroll = calculateMaxScroll();
+        if (scrollPosition > maxScroll) {
+            scrollPosition = maxScroll;
             newsList.style.transform = `translateX(-${scrollPosition}px)`;
         }
-        
         updateButtons();
     });
 
