@@ -1,22 +1,34 @@
-/* -------------------------------------------- медиа-запрос для ПК --------------------------------------- */
+/* ! -------------------------------------------- медиа-запрос для ПК --------------------------------------- */
 
 @media screen and (min-width: 1001px) and (max-width: 2560px) {
-    /* header */
+    /* ? start: header */
 
-    /* main */
+    /* ? end: header */
 
-    /* footer */
+    /* ? start: main */
 
-    /* gallery */
+    /* ? end: main */
 
-    /* login */
+    /* ? start: footer */
 
-    /* registration */
+    /* ? end: footer */
+
+    /* ? start: gallery */
+
+    /* ? end: gallery */
+
+    /* ? start: login */
+
+    /* ? end: login */
+
+    /* ? start: registration */
+
+    /* ? end: registration */
 }
 
-/* -------------------------------------------- медиа-запрос для планшетов --------------------------------------- */
+/* ! -------------------------------------------- медиа-запрос для планшетов --------------------------------------- */
 
-@media screen and (min-width: 769px) and (max-width: 1000px) {
+@media screen and (min-width: 768px) and (max-width: 1000px) {
 
     /* общий стиль */
     * {
@@ -25,70 +37,32 @@
         font-size: 16px;
     }
 
-    /* header */
-
-    /* main */
-
-    /* footer */
-
-    /* gallery */
-
-    /* login */
-
-    /* registration */
-}
-
-/* -------------------------------------------- медиа-запрос для телефонов --------------------------------------- */
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-
-    /* общий стиль */
-    * {
-        font-family: "Roboto", sans-serif;
-        box-sizing: border-box;
-        font-size: 14px;
-    }
-
-    /* header */
-
-    /* main */
-
-    /* карточки производителей */
-
-    /* общий стиль для карточек */
-    .maker_card {
-        margin-top: 20px;
-    }
-
-    /* карточки финансовых */
-
-    /* общий стиль для карточек */
-    .fin_card {
-        margin-top: 20px;
-    }
-
-    /* footer */
-
-    /* gallery */
-
-    /* login */
-
-    /* registration */
-}
-
-
-@media screen and (max-width: 768px) {
-
-    /* общий стиль */
-    * {
-        font-family: "Roboto", sans-serif;
-        box-sizing: border-box;
-        font-size: 13px;
-    }
+    /* ? start: header */
 
     /* контейнер уведомлений */
     .notification-container {
         right: 25%;
+    }
+
+    /* анимации для бургер-меню */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* элементы в верхнем блоке */
+    #head blockquote,
+    #head p,
+    #head button {
+        position: relative;
+        z-index: 1;
     }
 
     /* контейнер уведомлений при наведении */
@@ -152,27 +126,6 @@
         color: #EDF2F4;
         border-bottom: 1px solid #f0f0f0;
         cursor: pointer;
-    }
-
-
-    /* стили для ссылок */
-    .notification-list li a {
-        color: #EF233C;
-    }
-
-    /* стили для посещённых ссылок */
-    .notification-list li a:visited {
-        color: #8D99AE;
-    }
-
-    /* последний элемент списка уведомлений */
-    .notification-list li:last-child {
-        border-bottom: none;
-    }
-
-    /* элемент списка уведомлений при наведении */
-    .notification-list li:hover {
-        background-color: #1f2030;
     }
 
     /* стили для бургер-меню */
@@ -385,54 +338,141 @@
     .box {
         margin-top: 70px;
     }
+
+    /* ? end: header */
+
+    /* ? start: main */
+
+    /* ? end: main */
+
+    /* ? start: footer */
+
+    /* ? end: footer */
+
+    /* ? start: gallery */
+
+    /* ? end: gallery */
+
+    /* ? start: login */
+
+    /* ? end: login */
+
+    /* ? start: registration */
+
+    /* ? end: registration */
 }
 
-/* анимации для бургер-меню */
-.burger-menu.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
+/* ! -------------------------------------------- медиа-запрос для телефонов --------------------------------------- */
 
-.burger-menu.active span:nth-child(2) {
-    opacity: 0;
-}
+@media screen and (min-width: 320px) and (max-width: 768px) {
 
-.burger-menu.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* элементы в верхнем блоке */
-#head blockquote,
-#head p,
-#head button {
-    position: relative;
-    z-index: 1;
-}
-
-/* медиа-запрос для устройств с максимальной шириной 480px */
-@media screen and (max-width: 480px) {
-
-    body {
-        font-size: 12px;
+    /* общий стиль */
+    * {
+        font-family: "Roboto", sans-serif;
+        box-sizing: border-box;
+        font-size: 14px;
     }
 
-    /* гифка в галерее */
-    .gallery-gif {
-        left: 0%;
+    /* ? start: header */
+    header {
+        display: grid;
+        grid-template-rows: [r1] auto [r2];
+        grid-template-columns: [c1] 50px [c2] 2fr [c3] 50px [c4];
     }
 
-    /* навигация */
-    .header-nav {
+    /* header */
+    header {
+        font-size: 16px;
+    }
+
+    header button {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* *----- логотип ----- */
+
+    #sitecont {
+        width: 50px;
+        height: 50px;
+    }
+
+    #site {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+
+    #site img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* *----- уведомления ----- */
+
+    .notification-container {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* кнопка уведомлений */
+    #notification {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* иконка уведомлений */
+    #notification .icon {
+        font-size: 20px;
+    }
+
+    /* количество уведомлений */
+    #notification .badge {
+        font-size: 11px;
+    }
+
+    /* кнопка уведомлений при наведении */
+    .notification-container:hover #notification {
+        width: 135px;
+        height: 40px;
+    }
+
+    /* количество уведомлений при наведении */
+    .notification-container:hover #notification .badge {
+        top: 10px;
+        right: 10px;
+        transform: none;
+    }
+
+    /* список уведомлений */
+    .notification-list {
         display: none;
-        position: fixed;
-        top: 95px;
-        right: -100%;
-        left: 0%;
-        width: 250px;
-        height: calc(100% - 80px);
-        background-color: #1f2030E5;
-        flex-direction: column;
-        padding: 20px;
-        z-index: 99;
+        top: auto;
+        right: auto;
+        width: 135px;
+        position: absolute;
+    }
+
+    /* список уведомлений при наведении */
+    .notification-container:hover .notification-list {
+        display: block;
+    }
+
+    /* элемент списка уведомлений */
+    .notification-list li a {
+        font-size: 11px;
+    }
+
+
+    /* *----- бургер-меню ----- */
+
+    /* бургер-меню */
+    .burger-menu {
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+        display: block;
     }
 
     /* анимации для бургер-меню */
@@ -448,32 +488,119 @@
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
+    /* *----- навигация в бургер-меню ----- */
+
+    /* навигация */
+    .header-nav {
+        display: none;
+        position: fixed;
+        top: 65px;
+        width: auto;
+        background-color: #1f2030E5;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 99;
+    }
+
+    /* навигация при активном бургер-меню */
+    .header-nav.active {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-auto-flow: row;
+        place-items: center;
+        position: absolute;
+        height: auto;
+        right: 0;
+        width: auto;
+        border-radius: 40px;
+    }
+
+    /* ссылки на страницы в навигации */
+    .header-nav a {
+        font-size: 15px;
+        width: 100%;
+        background-color: #EF233C;
+    }
+
+    /* кнопки в навигации */
+    .header-nav button {
+        font-size: 15px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    #catalog {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    #cart {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    #favourite {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    #orders {
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+    }
+
+    #gallery {
+        grid-row: 5 / 6;
+        grid-column: 1 / 2;
+    }
+
+    #log {
+        grid-row: 6 / 7;
+        grid-column: 1 / 2;
+    }
+
+    /* ? end: header */
+
+    /* ? start: main */
+    body {
+        font-size: 12px;
+    }
+
+    main {
+        width: auto;
+    }
+
+    .block {
+        width: 100%
+    }
+
+    /* стиль для секций main */
+
+    main section {
+        font-size: 18px;
+    }
+
+    /* ? ---------------- начало стиля для верхнего блока ---------------- */
+
+    /* стиль для заголовка h1 */
+    #head h1 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
     /* элементы в верхнем блоке */
     #head blockquote,
     #head p,
     #head button {
         position: relative;
         z-index: 1;
-    }
-
-    /* бургер-меню */
-    .burger-menu {
-        display: block;
-    }
-
-    /* header */
-    header {
-        font-size: 16px;
-    }
-
-    /* цитата в верхнем блоке */
-    #head h1 {
-        font-size: 15px;
+        padding: 0 20px;
     }
 
     /* автор цитаты в верхнем блоке */
     #head cite {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     /* фоновая картинка */
@@ -483,31 +610,251 @@
 
     /* кнопка скачивания */
     #head button {
-        font-size: 13px;
+        font-size: 14px;
         width: 50%;
         height: 50%;
     }
 
     /* подпись в верхнем блоке */
     #head p {
+        font-size: 14px;
+    }
+
+    #head button {
+        height: 30px;
+    }
+
+    /* ? ---------------- конец стиля для верхнего блока ---------------- */
+
+    /* ? ---------------- начало стиля для карточек со ссылками ---------------- */
+
+    /* контейнер карточек со ссылками на другие страницы */
+    #link_cards {
+        display: grid;
+        grid-template-columns: [c1] auto [c2];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
+        place-items: center;
+        row-gap: 30px;
+        padding: 30px;
+    }
+
+    .box {
+        width: 200px;
+        height: 340px;
+    }
+
+    .box .content {
+        width: 240px;
+        height: 290px;
+        padding: 10px;
+        row-gap: 10px;
+    }
+
+    .box h2 {
+        font-size: 30px;
+    }
+
+    .buttons_link {
+        font-size: 14px;
+        height: 35px;
+        width: 200px;
+    }
+
+    /* карточки производителей */
+
+    /* общий стиль для карточек */
+    .maker_card {
+        margin-top: 20px;
+    }
+
+    /* карточки финансовых */
+
+    /* общий стиль для карточек */
+    .fin_card {
+        margin-top: 20px;
+    }
+
+    /* ? ---------------- конец стиля для карточек со ссылками ---------------- */
+
+    /* ? ---------------- начало стиля для истории ---------------- */
+
+    /* стиль для изображения старого автосалона */
+    #old {
+        height: 100px;
+    }
+
+    /* ? ---------------- конец стиля для истории ---------------- */
+
+    /* ? ---------------- начало стиля для мозаики ---------------- */
+
+    .mosaic {
+        display: grid;
+        grid-template-columns: [c1] auto [c2] auto [c3];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5] auto [r6] auto [r7];
+        place-items: stretch;
+        row-gap: 10px;
+        column-gap: 10px;
+    }
+
+    .mosaic_item {
+        padding: 10px;
+    }
+
+    .mosaic_item h5 {
+        font-size: 20px;
+    }
+
+    .mosaic_item p {
+        font-size: 14px;
+        height: 100%;
+    }
+
+    #item1 {
+        grid-row: 2 / 4;
+        grid-column: 1 / 2;
+    }
+
+    #item2 {
+        grid-row: 6 / 7;
+        grid-column: 1 / 3;
+    }
+
+    #item3 {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+
+    #item4 {
+        grid-row: 2 / 4;
+        grid-column: 2 / 3;
+    }
+
+    #item5 {
+        grid-row: 5 / 6;
+        grid-column: 1 / 2;
+    }
+
+    #item6 {
+        grid-row: 4 / 5;
+        grid-column: 1 / 3;
+    }
+
+    #item7 {
+        grid-row: 5 / 6;
+        grid-column: 2 / 3;
+    }
+
+    /* ? ---------------- конец стиля для мозаики ---------------- */
+
+
+    /* стиль для видео */
+    #video {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* ? ---------------- начало стиля для партнёров ---------------- */
+
+
+    /* ----- карточки партнёров ----- */
+
+    .partner_cards {
+        display: grid;
+        grid-template-columns: [c1] auto [c2];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4];
+        row-gap: 50px;
+    }
+
+    /* ? ---------------- конец стиля для партнёров ---------------- */
+
+    /* ? ---------------- начало стиля для новостей ---------------- */
+
+    /* контейнер новости */
+    .new .content {
+        width: 100%;
+        height: auto;
+        max-height: 270px;
+    }
+
+    .new .content a {
+        display: grid;
+        grid-template-rows: [r1] 50% [r2] 30% [r3];
+        row-gap: 0px;
+        padding: 5px;
+    }
+
+    .new b {
         font-size: 12px;
     }
 
-    /* кнопки в site.html */
-    .site .buttons {
+    /* изображение новости */
+    .new .content img {
+        border-radius: 10px;
+        width: auto;
+        height: 55%;
+        padding: 0;
+    }
+
+    .news-list {
+        padding: 0;
+    }
+
+    /* ? end: main */
+
+    /* ? start: footer */
+    .ftr {
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5] auto [r6] auto [r7] auto [r8] auto [r9];
+        grid-template-columns: [c1] auto [c2];
+        grid-template-areas: none;
+        gap: 20px;
+        place-items: center;
+    }
+
+    footer p,
+    footer a {
         font-size: 12px;
-        width: 80%;
-        max-width: 250px;
     }
 
-    /* ссылка в навигации */
-    nav a {
-        padding: 3px;
+    .ftr h3 {
+        font-size: 25px;
+        margin: 0;
     }
 
+    #qui {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .quick_links {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        border: none;
+    }
+
+    #cont {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    #contacts {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        border: none;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    #soc {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
 
     /* контейнер для кнопок соц.сетей */
     .social_buttons_container {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
         gap: 10px;
     }
 
@@ -515,19 +862,128 @@
     .social_buttons img {
         height: 30px;
     }
-}
 
-/* ------------------------------------ стили для элементов страницы входа (для мобильных устройств) -------------------------------- */
-
-/* медиа-запрос для мобильных устройств с максимальной шириной 768px */
-@media screen and (max-width: 768px) {
-
-    /* карточка входа */
-    .login_box {
-        margin-top: 70%;
-        margin-left: 50%;
+    #feedback {
+        grid-column: 1 / 2;
+        grid-row: 7 / 8;
     }
 
+    /* поле в ФОС */
+    #feedback fieldset {
+        display: grid;
+        grid-template-columns: [c1] auto [c2];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5] auto [r6] auto [r7] auto [r8] auto [r9]auto [r10] auto [r11];
+    }
+
+    #feedback fieldset input {
+        width: 100%;
+    }
+
+    /* стиль для карты */
+    .map {
+        grid-row: 8 / 9;
+        grid-column: 1 / 2;
+        width: 100%;
+    }
+
+    #L1 {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    /* select в ФОС */
+    #feedback select {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    /* элементы в select */
+    #feedback select option {
+        background-color: var(--third-color);
+        color: var(--text-color);
+    }
+
+    #L2 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    #name {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+
+    #L3 {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+
+    #phone {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+    }
+
+    #L4 {
+        grid-column: 1 / 2;
+        grid-row: 7 / 8;
+    }
+
+    #mail {
+        grid-column: 1 / 2;
+        grid-row: 8 / 9;
+    }
+
+    #L5 {
+        grid-column: 1 / 2;
+        grid-row: 9 / 10;
+    }
+
+    #que {
+        grid-column: 1 / 2;
+        grid-row: 10 / 11;
+    }
+
+    #L6 {
+        grid-column: 1 / 2;
+        grid-row: 11 / 12;
+    }
+
+    #message {
+        grid-column: 1 / 2;
+        grid-row: 12 / 13;
+    }
+
+    .container2 {
+        grid-row: 13 / 14;
+        grid-column: 1 / 2;
+    }
+
+    .container2 input {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .container2 span {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    #send {
+        grid-row: 14 / 15;
+        grid-column: 1 / 2;
+    }
+
+    /* ? end: footer */
+
+    /* ? start: gallery */
+    /* гифка в галерее */
+    .gallery-gif {
+        left: 0%;
+    }
+
+    /* ? end: gallery */
+
+    /* ? start: login */
     /* расположение левого квадрата */
     .login_box #span2::before {
         top: 80px;
@@ -555,19 +1011,10 @@
     .login_box:hover #span2:after {
         transform: translateY(-190px) translateX(-30px);
     }
-}
 
-/* ------------------------------------ стили для элементов страницы регистрации (для мобильных устройств) -------------------------------- */
+    /* ? end: login */
 
-/* медиа-запрос для мобильных устройств */
-@media screen and (max-width: 768px) {
-
-    /* карточка регистрации */
-    .reg_box {
-        margin-top: 70%;
-        margin-left: 50%;
-    }
-
+    /* ? start: registration */
     /* расположение левого квадрата */
     .reg_box #span2::before {
         top: 80px;
@@ -595,4 +1042,6 @@
     .reg_box:hover #span2:after {
         transform: translateY(-190px) translateX(-30px);
     }
+
+    /* ? end: registration */
 }

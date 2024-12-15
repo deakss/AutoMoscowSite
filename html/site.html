@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 
+<!-- ? START: -->
+<!-- ? END: -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +24,8 @@
 
 <body>
     <header>
-        <div>
+        <!-- ? START: header -->
+        <div id="sitecont">
             <!-- кнопка-ссылка на главную страницу в виде логотипа -->
             <button id="site" onclick="window.location.href='site.html';">
                 <img src="/images/LogoBl.png" alt="Logo">
@@ -68,6 +72,7 @@
     <main id="sitemain">
         <!-- основное содержимое страницы -->
         <section>
+            <!-- ! START: верхний блок с картинкой и цитатой -->
             <div id="head">
                 <!-- фоновое изображение -->
                 <img id="bg" src="/images/background.jpg" alt="Автосалон">
@@ -86,6 +91,9 @@
                     <button class="buttons">Скачать приложение</button>
                 </div>
             </div>
+            <!-- ! END: верхний блок с картинкой и цитатой -->
+
+            <!-- ! START: карточки-ссылки на другие страницы -->
             <div id="link_cards">
                 <div class="box" id="box1">
                     <span></span>
@@ -125,6 +133,9 @@
                     </div>
                 </div>
             </div>
+            <!-- ! END: карточки-ссылки на другие страницы -->
+
+            <!-- ! START: о нас - история -->
             <h3 id="onas">О нас</h3>
             <div class="block">
                 <h4>История</h4>
@@ -166,6 +177,9 @@
                     окруженный заботой, профессионализмом и искренним желанием сделать процесс покупки автомобиля
                     максимально простым и радостным.</p>
             </div>
+            <!-- ! END: о нас - история -->
+
+            <!-- ! START: о нас - ценности -->
             <div class="block">
                 <h4>Ценности и миссия</h4>
                 <!-- нумерованный список с изменённым типом -->
@@ -193,13 +207,47 @@
                     становится
                     радостным событием.</p>
             </div>
+            <!-- ! END: о нас - ценности -->
+
+            <div class="mosaic">
+                <div class="mosaic_item" id="item1">
+                    <h5>5000</h5>
+                    <p>И даже больше автомобилей разных марок, моделей и цветов есть у нас на складах по всему континенту</p>
+                </div>
+                <div class="mosaic_item" id="item2">
+                    <h5>>150.000</h5>
+                    <p>Столько людей прошли с нами путь от выбора автомобиля до заключения сделки</p>
+                </div>
+                <div class="mosaic_item" id="item3">
+                    <h5>15+</h5>
+                    <p>Столько лет мы предоставляем широкий выбор, отличный сервис и приятные воспоминания</p>
+                </div>
+                <div class="mosaic_item" id="item4">
+                    <h5>24 часа</h5>
+                    <p>Наши покупатели могут связаться с нами по любому вопросу</p>
+                </div>
+                <div class="mosaic_item" id="item5">
+                    <h5>>40</h5>
+                    <p>Надёжых партнёров разных направлений сотрудничают с AutoMoscow</p>
+                </div>
+                <div class="mosaic_item" id="item6">
+                    <h5>4 страны и 653 города</h5>
+                    <p>Где бы вы не были, мы рядом</p>
+                </div>
+                <div class="mosaic_item" id="item7">
+                    <h5>91.5%</h5>
+                    <p>Средний рейтинг AutoMoscow, собранный с 40 различных сайтов</p>
+                </div>
+            </div>
+
             <!-- видео -->
-            <iframe id="video" height="720" width="1280" src="https://rutube.ru/play/embed/f65a1e183d6a6f9d56b8a483ed10e6c2/?skinColor=e53935"
-                frameBorder="0" allow="clipboard-write; autoplay" allowwebkitAllowFullScreen mozallowfullscreen
+            <iframe id="video"
+                src="https://rutube.ru/play/embed/f65a1e183d6a6f9d56b8a483ed10e6c2/?skinColor=e53935" frameBorder="0"
+                allow="clipboard-write; autoplay" allowwebkitAllowFullScreen mozallowfullscreen
                 allowFullScreen></iframe>
             <div>
-                <!-- --- партнёры производители --- -->
-                <h4>Наши партнёры</h4>
+                <!-- ! START: о нас - партнёры производители -->
+                <h4 id="partners">Наши партнёры</h4>
                 <h5>Производители автомобилей</h5>
                 <div class="partner_cards">
                     <div class="maker_card">
@@ -248,7 +296,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- --- финансовые партнёры --- -->
+                <!-- ! END: о нас - партнёры производители -->
+
+                <!-- ! START: о нас - финансовые партнёры -->
                 <h5>Финансовые партнёры</h5>
                 <div class="partner_cards">
                     <div class="fin_card">
@@ -297,7 +347,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- --- страховые партнёры --- -->
+                <!-- ! END: о нас - финансовые партнёры -->
+
+                <!-- ! START: о нас - страховые партнёры -->
                 <h5>Страховые компании</h5>
                 <!-- Росгосстрах -->
                 <div class="partner_cards">
@@ -406,8 +458,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- ! END: о нас - страховые партнёры -->
             </div>
-            <!-- новости -->
+
+            <!-- ! START: новости -->
             <h3 id="news">Новости</h3>
             <div class="news-container">
                 <!-- кнопка пролистывания -->
@@ -471,7 +525,9 @@
                 <!-- кнопка пролистывания -->
                 <button class="nav-btn next">→</button>
             </div>
-            <!-- часто задаваемые вопросы -->
+            <!-- ! END: новости -->
+
+            <!-- ! START: FAQ -->
             <div class="block">
                 <h3 id="faq">Частые вопросы</h3>
                 <ol>
@@ -491,76 +547,108 @@
                     </li>
                 </ol>
             </div>
+            <!-- ! END: FAQ -->
         </section>
     </main>
     <!-- футер -->
     <footer>
-        <h3 id="cont">Контакты</h3>
-        <address>
-            <!-- ссылка на номер телефона -->
-            <p>Круглосуточная поддержка: <a href="tel:79777020241">+7 (977) 702-02-41</a></p>
-            <!-- ссылка на почтовый клиент -->
-            <p>Поддержка в письмах: <a href="mailto:de.akss@mail.ru ">de.akss@mail.ru</a></p>
-        </address>
-        <div class="social_buttons_container">
-            <!-- кнопка для vk -->
-            <button class="social_buttons" id="vk" onclick="window.location.href='https://vk.com';">
-                <img src="/images/vk.png" alt="VK">
-            </button>
+        <section class="ftr">
+            <!-- ! START: быстрые ссылки - ссылки на разделы в site.html -->
+            <h3 id="qui">Быстрые ссылки</h3>
+            <div class="quick_links">
+                <a href="#onas">О нас</a><br>
+                <a href="#partners">Партнёры</a><br>
+                <a href="#news">Новости</a><br>
+                <a href="#faq">FAQ</a><br>
+                <a href="#privacy">Политика конфиденциальности</a><br>
+                <a href="#terms">Условия использования</a><br>
+            </div>
+            <!-- ! END: быстрые ссылки -->
 
-            <!-- кнопка для telegram -->
-            <button class="social_buttons" id="tg" onclick="window.location.href='https://t.me/Romancev768';">
-                <img src="/images/tg.png" alt="Telegram">
-            </button>
+            <!-- ! START: контакты - номер телефона, почта -->
+            <h3 id="cont">Контакты</h3>
+            <address id="contacts">
+                <!-- ссылка на номер телефона -->
+                <p>Поддержка для покупателей: <a href="tel:74950010101">+7 (495) 001-01-01</a></p>
+                <p>Поддержка для VIP-клиентов: <a href="tel:74950020202">+7 (495) 002-02-02</a></p>
+                <p>Поддержка для оптовых клиентов: <a href="tel:74950030303">+7 (495) 003-03-03</a></p>
+                <hr>
+                <!-- ссылка на почтовый клиент -->
+                <p>Почта для покупателей: <a href="mailto:de.akss@mail.ru ">support@automoscow.ru</a></p>
+                <p>Почта для VIP-клиентов: <a href="mailto:de.akss@mail.ru ">vipsup@automoscow.ru</a></p>
+                <p>Почта для оптовых клиентов: <a href="mailto:de.akss@mail.ru ">optsup@automoscow.ru</a></p>
+            </address>
+            <!-- ! END: контакты -->
 
-            <!-- кнопка для instagram -->
-            <button class="social_buttons" id="inst" onclick="window.location.href='https://www.instagram.com';">
-                <img src="/images/inst.png" alt="Instagram">
-            </button>
+            <!-- ! START: наши соц.сети - кнопки-ссылки с переходом в соц.сети -->
+            <h3 id="soc">Наши соц.сети</h3>
+            <div class="social_buttons_container">
+                <!-- кнопка для vk -->
+                <button class="social_buttons" id="vk" onclick="window.location.href='https://vk.com';">
+                    <img src="/images/vk.png" alt="VK">
+                </button>
 
-            <!-- кнопка для youtube -->
-            <button class="social_buttons" id="yt" onclick="window.location.href='https://www.youtube.com';">
-                <img src="/images/yt.png" alt="Youtube">
-            </button>
+                <!-- кнопка для telegram -->
+                <button class="social_buttons" id="tg" onclick="window.location.href='https://t.me/Romancev768';">
+                    <img src="/images/tg.png" alt="Telegram">
+                </button>
 
-            <!-- кнопка для X -->
-            <button class="social_buttons" id="x" onclick="window.location.href='https://www.x.com';">
-                <img src="/images/tw.png" alt="X">
-            </button>
-        </div>
-        <!-- форма обратной связи -->
-        <form id="feedback">
-            <fieldset>
-                <legend>Обратная связь</legend>
-                <!-- выпадающий список -->
-                <label>Выберите тип обратной связи:</label>
-                <select class="combo">
-                    <option value="1">Выберите тип</option>
-                    <option value="2">Отзыв</option>
-                    <option value="3">Сообщение об ошибке</option>
-                    <option value="4">Вопрос</option>
-                </select>
-                <!-- поля ввода информации -->
-                <label for="name">Имя:</label>
-                <input class="input1" type="text" id="name" name="name" required maxlength="20">
-                <label for="phone">Номер телефона:</label>
-                <input class="input1" type="tel" id="phone" name="phone" required maxlength="11">
-                <label for="message">Сообщение:</label>
-                <textarea class="inputarea" id="message" name="message" required></textarea>
-                <!-- чекбокс -->
-                <label class="container2">
-                    <input type="checkbox" checked="checked">
-                    <div class="checkmark"></div>
-                    <span class="form_agree_text">Я принимаю условия конфиденциальности</span>
-                </label>
-                <!-- кнопка отправки формы -->
-                <button class="buttons" id="send" type="submit">Отправить</button>
-            </fieldset>
-        </form>
-        <!-- карта -->
-        <iframe class="map"
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A31f28ac98be6ec5e2a0f730310ec5b5465d20e5bab55833af29b1d20804a0042&amp;source=constructor"
-            frameborder="0" alt="Карта"></iframe>
+                <!-- кнопка для instagram -->
+                <button class="social_buttons" id="inst" onclick="window.location.href='https://www.instagram.com';">
+                    <img src="/images/inst.png" alt="Instagram">
+                </button>
+
+                <!-- кнопка для youtube -->
+                <button class="social_buttons" id="yt" onclick="window.location.href='https://www.youtube.com';">
+                    <img src="/images/yt.png" alt="Youtube">
+                </button>
+
+                <!-- кнопка для X -->
+                <button class="social_buttons" id="x" onclick="window.location.href='https://www.x.com';">
+                    <img src="/images/tw.png" alt="X">
+                </button>
+            </div>
+            <!-- ! END: наши соц.сети -->
+             
+            <!-- ! START: связаться с нами - ФОС -->
+            <form id="feedback">
+                <fieldset>
+                    <legend>Обратная связь</legend>
+                    <!-- выпадающий список -->
+                    <label id="L1">Выберите тип обратной связи:</label>
+                    <select class="combo">
+                        <option value="1">Выберите тип</option>
+                        <option value="2">Отзыв</option>
+                        <option value="3">Сообщение об ошибке</option>
+                        <option value="4">Вопрос</option>
+                    </select>
+                    <!-- поля ввода информации -->
+                    <label for="name" id="L2">Имя:</label>
+                    <input class="input1" type="text" id="name" name="name" required maxlength="20">
+                    <label for="phone" id="L3">Номер телефона:</label>
+                    <input class="input1" type="tel" id="phone" name="phone" required maxlength="11">
+                    <label for="mail" id="L4">Почта:</label>
+                    <input class="input1" type="email" id="mail" name="mail" required maxlength="100">
+                    <label for="que" id="L5">Тема обращения:</label>
+                    <input class="input1" type="text" id="que" name="que" required maxlength="50">
+                    <label for="message" id="L6">Сообщение:</label>
+                    <textarea class="inputarea" id="message" name="message" required></textarea>
+                    <!-- чекбокс -->
+                    <label class="container2">
+                        <input type="checkbox" checked="checked">
+                        <div class="checkmark"></div>
+                        <span class="form_agree_text">Я принимаю условия конфиденциальности</span>
+                    </label>
+                    <!-- кнопка отправки формы -->
+                    <button class="buttons" id="send" type="submit">Отправить</button>
+                </fieldset>
+            </form>
+            <!-- ! END: связаться с нами -->
+            <!-- карта -->
+            <iframe class="map"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A31f28ac98be6ec5e2a0f730310ec5b5465d20e5bab55833af29b1d20804a0042&amp;source=constructor"
+                frameborder="0" alt="Карта"></iframe>
+        </section>
     </footer>
     <!-- подключение скриптов -->
     <script src="/js/script.js"></script>

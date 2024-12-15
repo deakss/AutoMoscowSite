@@ -5,12 +5,15 @@
     padding: 2rem;
     max-width: 1400px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: [c1] 1fr [c2];
+    grid-template-rows: [r1] auto [r2] auto [r3] auto [r4];
+    gap: 20px;
+    place-items: center;
 }
 
 /* заголовок в галерее */
 .gallery-container h1 {
-    text-align: center;
-    margin-bottom: 2rem;
     color: #EDF2F4;
 }
 
@@ -84,7 +87,6 @@
     justify-content: center;
     max-width: 600px;
     margin: 0 auto;
-    margin-bottom: 20px;
     padding: 10px;
     overflow: hidden;
     border-radius: 8px;

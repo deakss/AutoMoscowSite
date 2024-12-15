@@ -298,7 +298,6 @@ header button {
 
 /* *! ------------------------------- стили для main ---------------------------------------------- */
 
-/* отступы для содержимого main */
 #sitemain {
   color: var(--text-color);
   grid-template-columns: [c1] auto [c2];
@@ -405,6 +404,7 @@ h5 {
   grid-template-rows: repeat(4, auto);
   place-items: center;
   row-gap: 10px;
+  z-index: 10;
 }
 
 /* стиль для заголовка h1 */
@@ -647,12 +647,76 @@ h5 {
 
 /* ? ---------------- конец стиля для истории ---------------- */
 
+/* ? ---------------- начало стиля для мозаики ---------------- */
+
+.mosaic {
+  display: grid;
+  grid-template-columns: [c1] auto [c2] auto [c3] auto [c4] auto [c5];
+  grid-template-rows: [r1] auto [r2] auto [r3] auto [r4];
+  place-items: stretch;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.mosaic_item {
+  background-color: var(--transp-back-color);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: [c1] auto [c2];
+  grid-template-rows: [r1] auto [r2] auto [r3];
+  place-items: center;
+  padding: 20px;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+
+.mosaic_item h5 {
+  font-size: 50px;
+}
+
+.mosaic_item p {
+  font-size: 20px;
+  height: 100%;
+}
+
+#item1{
+grid-row: 1 / 3;
+grid-column: 1 / 2;
+}
+
+#item2{
+  grid-row: 1 / 2;
+  grid-column: 2 / 5;
+}
+
+#item3{
+  grid-row: 2 / 3;
+  grid-column: 2 / 4;
+}
+
+#item4{
+  grid-row: 2 / 4;
+  grid-column: 4 / 5;
+}
+
+.mosaic_item:hover {
+  background-color: var(--second-color);
+}
+
+/* ? ---------------- конец стиля для мозаики ---------------- */
+
+#video {
+  height: 720px;
+   width: 1280px;
+}
+
 /* ? ---------------- начало стиля для партнёров ---------------- */
 
 
 /* ----- карточки партнёров ----- */
 
 .partner_cards {
+  margin-top: 25px;
   display: grid;
   grid-template-columns: [c1] auto [c2] auto [c3] auto [c4];
   grid-template-rows: [r1] auto [r2];
@@ -1098,62 +1162,62 @@ h5 {
 
 /* стили для контейнера новостей */
 .news-container {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: [c1] auto [c2];
+  place-items: center;
   width: 100%;
-  position: relative;
   height: 100%;
-  padding: 0 20px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 /* список новостей */
 .news-list {
-  display: flex;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: [r1] auto [r2];
   list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 20px;
   text-align: center;
-}
-
-/* элемент списка новостей */
-.news-list li {
-  width: 100%;
-  left: 50%;
 }
 
 /* новость */
 .new {
-  width: 100%;
   padding: 5px;
-  border-radius: 7px;
 }
 
 /* контейнер новости */
 .new .content {
-  position: relative;
+  display: grid;
   width: 300px;
   height: 100%;
-  padding: 20px 40px;
   background: var(--transp-back-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  z-index: 1;
+  border-radius: 20px;
+  z-index: 10;
   transform: 0.5s;
-  color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+}
+
+.new .content a {
+  display: grid;
+  grid-template-rows: [r1] 220px [r2] 80px [r3];
+  grid-template-columns: [c1] auto [c2];
+  place-items: center;
+  padding: 10px;
+  row-gap: 10px;
 }
 
 /* изображение новости */
-.new img {
+.new .content img {
+  grid-row: 1 / 2;
   width: 100%;
   height: 100%;
-  border-radius: 7px;
+  border-radius: 10px;
+}
+
+.new .content p {
+  grid-row: 2 / 3;
 }
 
 /* стили для кнопок пролистывания */
@@ -1161,52 +1225,87 @@ h5 {
   background: rgba(0, 0, 0, 0.5);
   color: var(--text-color);
   border: none;
-  padding: 10px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   cursor: pointer;
+  position: absolute;
   z-index: 10;
-  transition: none;
+  width: 40px;
+  height: 30px;
+  border-radius: 12px;
 }
 
 /* кнопки пролистывания */
 .nav-btn.prev {
-  left: 0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  justify-self: start;
+  align-self: center;
+  margin-left: 10px;
 }
 
 .nav-btn.next {
-  right: 0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  justify-self: end;
+  align-self: center;
+  margin-right: 10px;
 }
 
 /* ? ---------------- конец стиля для новостей ---------------- */
 
 /* *! ------------------------------- стили для footer ---------------------------------------------- */
 
-footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.ftr {
+  margin-top: 20px;
   background-color: var(--third-color);
   color: var(--text-color);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
+  grid-template-columns: [c1] 1fr [c2] 1fr [c3] 1fr [c4];
+  grid-template-areas: 
+  ". . ."
+  ". . ."
+  "fos fos fos"
+  "map map map";
+  gap: 20px;
 }
 
 /* стили для ссылок */
-footer address a {
+footer a {
   color: var(--main-color);
 }
 
 /* стили для посещённых ссылок */
-footer address a:visited {
+footer a:visited {
   color: #8D99AE;
+}
+
+/* ? ---------------- начало стиля для быстрых ссылок ---------------- */
+#qui {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.quick_links {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  justify-self: start;
+  border-right: 1px solid var(--text-color);
+  width: 100%;
+  height: 200px;
+}
+/* ? ---------------- конец стиля для быстрых ссылок ---------------- */
+
+/* ? ---------------- начало стиля для соц.сетей ---------------- */
+#soc {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 /* контейнер для кнопок соц.сетей */
 .social_buttons_container {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -1269,47 +1368,124 @@ footer address a:visited {
   height: 40px;
   position: relative;
 }
+/* ? ---------------- конец стиля для соц.сетей ---------------- */
 
+/* ? ---------------- начало стиля для контактов ---------------- */
+#cont {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+#contacts {
+  grid-column: 3 / 4;
+  justify-self: start;
+  grid-row: 2 / 3;
+  border-left: 1px solid var(--text-color);
+  width: 100%;
+  padding-left: 10px;
+  height: 200px;
+}
 
-/* ----- стили для ФОС ----- */
+hr {
+  margin: 20px 0;
+  width: 75%;
+}
+/* ? ---------------- конец стиля для контактов ---------------- */
 
+/* ? ---------------- начало стиля для ФОС ---------------- */
 /* форма */
 #feedback {
+  grid-area: fos;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  height: 550px;
-  margin-bottom: 20px;
 }
 
 /* поле в ФОС */
 #feedback fieldset {
-  height: 550px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  width: 500px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: [c1] 1fr [c2] 1fr [c3];
+  grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5] auto [r6] auto [r7] auto [r8] auto [r9]auto [r10] auto [r11];
+  gap: 20px;
+  place-items: center;
+}
+
+#L1 {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
 }
 
 /* select в ФОС */
 #feedback select {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
   background: none;
   border: none;
   outline: none;
-  width: 460px;
+  width: 100%;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 9999px;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  color: #fff;
 }
 
 /* элементы в select */
 #feedback select option {
   background-color: var(--third-color);
+  color: var(--text-color);
+}
+
+.combo {
+  color: var(--text-color);
+}
+
+#L2 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+#name {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+#L3 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+#phone {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+#L4 {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+#mail {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+}
+
+#L5 {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+#que {
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
+}
+
+#L6 {
+  grid-column: 1 / 3;
+  grid-row: 7 / 8;
+}
+
+#message {
+  grid-column: 1 / 3;
+  grid-row: 8 / 9;
 }
 
 /* input в ФОС*/
@@ -1322,7 +1498,6 @@ footer address a:visited {
   font-size: 16px;
   border-radius: 9999px;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  color: #fff;
 }
 
 /* textarea в ФОС */
@@ -1330,13 +1505,12 @@ footer address a:visited {
   background: none;
   border: none;
   outline: none;
-  width: 460px;
+  width: 100%;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 20px;
   height: 200px;
   box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  color: #fff;
   resize: none;
 }
 
@@ -1350,12 +1524,13 @@ footer address a:visited {
 }
 
 .container2 {
+  grid-row: 9 / 10;
+  grid-column: 1 / 3;
   display: flex;
   cursor: pointer;
   align-items: center;
   gap: 10px;
   font-size: 16px;
-  color: #fff;
 }
 
 /* создание кастомного чекбокса */
@@ -1389,7 +1564,6 @@ footer address a:visited {
   opacity: 1;
 }
 
-
 .container2 .checkmark:after {
   left: 0.45em;
   top: 0.25em;
@@ -1405,15 +1579,20 @@ footer address a:visited {
   font-size: 14px;
 }
 
-
 /* стили для кнопки отправки */
 #send {
-  margin-top: 10px;
+  grid-row: 10 / 11;
+  grid-column: 1 / 3;
   background-color: var(--third-color);
+  width: 200px;
 }
+/* ? ---------------- конец стиля для ФОС ---------------- */
 
+/* ? ---------------- начало стиля для карты ---------------- */
 /* стиль для карты */
 .map {
+  grid-area: map;
   width: 100%;
   height: 400px;
 }
+/* ? ---------------- конец стиля для карты ---------------- */
