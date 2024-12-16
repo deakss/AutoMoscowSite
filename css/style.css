@@ -31,7 +31,7 @@ header {
   display: grid;
   grid-template-rows: [r1] auto [r2];
   grid-template-columns: [c1] 80px [c2] 250px [c3] auto [c4];
-  grid-column-gap: 10px;
+  column-gap: 10px;
   place-items: center;
   padding: 0 20px;
   font-size: 25px;
@@ -174,8 +174,7 @@ header nav {
   grid-row: 1 / 2;
   grid-column: 3 / 4;
   grid-template-columns: [cc1] auto [cc2] auto [cc3] auto [cc4] auto [cc5] auto [cc6] 150px [cc7];
-  justify-items: stretch;
-  align-items: center;
+  place-items: center;
   justify-self: stretch;
   grid-gap: 20px;
   text-align: center;
