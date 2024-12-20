@@ -1,5 +1,6 @@
+// скрипты работают после загрузки html
 document.addEventListener('DOMContentLoaded', function () {
-    // элементы для работы с новостями
+    // получаем элементы
     const newsList = document.querySelector('.news-list');
     const prevBtn = document.querySelector('.nav-btn.prev');
     const nextBtn = document.querySelector('.nav-btn.next');
@@ -28,15 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // * обновление видимости кнопок
     function updateButtons() {
+        // вычисляем максимальную прокрутку и записываем её в переменную
         const maxScroll = calculateMaxScroll();
+        // если прокрутка достигла одного из краев, то скрываем нужную кнопку
         prevBtn.style.visibility = scrollPosition <= 0 ? 'hidden' : 'visible';
         nextBtn.style.visibility = scrollPosition >= maxScroll ? 'hidden' : 'visible';
     }
 
     // * обновление прокрученного списка
     function updateScrollPosition(direction) {
+        // вычисляем ширину элемента
         const itemWidth = calculateItemWidth();
+        // вычисляем максимальную прокрутку
         const maxScroll = calculateMaxScroll();
+        // запоминаем старую прокрутку
         const oldPosition = scrollPosition;
 
         // если нажата правая кнопка, то прокрутить вправо
@@ -50,14 +56,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // если еще не достигнут край, то прокрутить
         if (oldPosition !== scrollPosition) {
+            // стили для прокрутки
             newsList.style.transition = 'transform 0.5s ease-in-out';
             newsList.style.transform = `translateX(-${scrollPosition}px)`;
+            // обновляем видимость кнопок
             updateButtons();
         }
     }
 
     // обработка завершения анимации
     newsList.addEventListener('transitionend', function () {
+        // убираем стили
         newsList.style.transition = '';
     });
 
@@ -70,40 +79,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // адаптация под размер экрана
     window.addEventListener('resize', function () {
+        // вычисляем максимальную прокрутку
         const maxScroll = calculateMaxScroll();
         if (scrollPosition > maxScroll) {
+            // устанавливаем максимальную прокрутку
             scrollPosition = maxScroll;
+            // стили для прокрутки
             newsList.style.transform = `translateX(-${scrollPosition}px)`;
         }
+        // обновляем видимость кнопок
         updateButtons();
     });
 
-    // мобильное меню
+    // получаем элементы меню
     const burgerMenu = document.querySelector('.burger-menu');
     const headerNav = document.querySelector('.header-nav');
 
+    // если элементы найдены
     if (burgerMenu && headerNav) {
-        burgerMenu.addEventListener('click', function() {
+        // обрабатываем клик по бургер-меню
+        burgerMenu.addEventListener('click', function () {
+            // добавляем класс active, показываем меню
             this.classList.toggle('active');
             headerNav.classList.toggle('active');
         });
 
         // закрытие меню при клике на пункт меню
+        // получаем все элементы навигации
         const menuItems = headerNav.querySelectorAll('a, button');
+        // проходимся по каждому элементу
         menuItems.forEach(item => {
+            // обрабатываем клик по элементу навигации
             item.addEventListener('click', () => {
+                // удаляем класс active, скрываем меню
                 burgerMenu.classList.remove('active');
                 headerNav.classList.remove('active');
             });
         });
 
         // закрытие меню при клике вне его
-        document.addEventListener('click', function(event) {
+        // обработчик клика вне меню
+        document.addEventListener('click', function (event) {
+            // если клик был не в меню и не по бургер-меню
             if (!headerNav.contains(event.target) && !burgerMenu.contains(event.target)) {
+                // удаляем класс active
                 burgerMenu.classList.remove('active');
                 headerNav.classList.remove('active');
             }
         });
     }
 });
-// !
