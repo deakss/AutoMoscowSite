@@ -1,0 +1,223 @@
+/* ------------------------------------- стили для каталога -------------------------------------------- */
+
+* {
+    color: var(--text-color);
+}
+
+/* секция с каталогом */
+.cat-container {
+    display: grid;
+    grid-template-columns: [c1] auto [c2] auto [c3] auto [c4];
+    grid-template-rows: [r1] auto [r2] auto [r3];
+    gap: 10px;
+    margin-top: 10px;
+    place-items: center;
+}
+
+.car_card,
+.search_panel,
+.cat-container aside {
+    background-color: var(--transp-back-color);
+    border-radius: 20px;
+    padding: 0 20px;
+    justify-self: stretch;
+}
+
+/* ----- START: панель поиска ----- */
+.search_panel {
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    display: grid;
+    grid-template-columns: [c1] auto [c2] auto [c3];
+    grid-template-rows: [r1] auto [r2];
+    align-items: center;
+    padding: 10px;
+}
+
+.searchbox {
+    display: grid;
+    grid-template-columns: [c1] auto [c2];
+    grid-template-rows: [r1] auto [r2] auto [r3];
+    justify-self: start;
+}
+
+.radiobuttons {
+    display: grid;
+    grid-template-columns: [c1] 1fr [c2] 1fr [c3] 1fr [c4] 1fr [c5];
+    grid-template-rows: [r1] auto [r2];
+    row-gap: 10px;
+    justify-self: start;
+}
+
+.label_cat {
+    display: grid;
+    grid-template-columns: [c1] 1fr [c2] 2fr [c3];
+    grid-template-rows: [r1] auto [r2];
+    column-gap: 10px;
+    place-items: center;
+}
+
+.radiobuttons .label_cat input {
+    border-width: 10px;
+    justify-self: end;
+}
+
+.radiobuttons .label_cat p {
+    justify-self: start;
+    user-select: none;
+}
+
+.label_cat input[type="radio"] {
+    background-color: var(--text-color);
+    border: 2px solid #D3D3D3;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.label_cat input[type="radio"]:checked {
+    border: 2px solid var(--main-color);
+    -webkit-animation: puls 0.7s forwards;
+    animation: pulse 0.7s forwards;
+}
+
+/* ----- EMD: панель поиска ----- */
+
+/* ----- START: панель фильтров----- */
+.filter_panel {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: [c1] auto [c2];
+    grid-template-rows: [r1] auto [r2] auto [r3] auto [r4];
+}
+
+.makers {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    display: grid;
+    row-gap: 5px;
+    margin-top: 10px;
+}
+
+.filter_panel hr {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+.colors {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    display: grid;
+    row-gap: 5px;
+    margin-bottom: 10px;
+}
+
+.filter_panel .label_cat div,
+.filter_panel .label_check div {
+    justify-self: center;
+}
+
+.filter_panel .label_cat p,
+.filter_panel .label_check p {
+    justify-self: start;
+}
+
+.filter_panel .label_cat {
+    grid-template-columns: [c1] auto [c2] 1fr [c3];
+}
+
+.filter_panel .label_check {
+    display: grid;
+    grid-template-columns: [c1] auto [c2] 1fr [c3];
+}
+
+.filter_panel .label_check div {
+    display: grid;
+    grid-template-rows: [r1] auto [r2];
+    grid-template-columns: [c1] auto [c2];
+    place-items: center;
+}
+
+.label_check input {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.label_check {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    column-gap: 10px;
+}
+
+.check {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-color);
+    border: 2px solid var(--border-rad-check);
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
+
+.check:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+}
+
+.label_check input:checked~.check:after {
+    opacity: 1;
+}
+
+.label_check .check:after {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    top: 2 px;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid var(--text-color);
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+}
+
+.label_check input:checked~.check {
+    background-color: var(--main-color);
+    border: none;
+}
+
+/* ----- EMD: панель фильтров ----- */
+
+/* ----- START: панель каталога ----- */
+.catalog {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: [c1] auto [c2];
+    grid-auto-flow: row;
+    row-gap: 10px;
+    place-self: stretch;
+    place-items: stretch;
+}
+
+/* ----- EMD: панель каталога ----- */
+
+/* ----- START: панель корзины ----- */
+.cart_panel {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    display: grid;
+}
+
+/* ----- EMD: панель корзины ----- */
