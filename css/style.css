@@ -14,6 +14,8 @@
   --text-color: #EDF2F4;
   --sec-text-color: #8D99AE;
   --transp-back-color: #1f20307F;
+  --transp-main-color: #EF233C7F;
+  --border-rad-check: #D9D9D9;
 }
 
 /* основной цвет фона */
@@ -678,22 +680,22 @@ h5 {
   height: 100%;
 }
 
-#item1{
-grid-row: 1 / 3;
-grid-column: 1 / 2;
+#item1 {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
 }
 
-#item2{
+#item2 {
   grid-row: 1 / 2;
   grid-column: 2 / 5;
 }
 
-#item3{
+#item3 {
   grid-row: 2 / 3;
   grid-column: 2 / 4;
 }
 
-#item4{
+#item4 {
   grid-row: 2 / 4;
   grid-column: 4 / 5;
 }
@@ -706,7 +708,7 @@ grid-column: 1 / 2;
 
 #video {
   height: 720px;
-   width: 1280px;
+  width: 1280px;
 }
 
 /* ? ---------------- начало стиля для партнёров ---------------- */
@@ -745,8 +747,8 @@ grid-column: 1 / 2;
   width: 100%;
   height: 150px;
   background: linear-gradient(to bottom, #ff0055, #ff3377);
-  border-top-left-radius: 20px; 
-  border-top-right-radius: 20px; 
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   display: flex;
@@ -790,7 +792,7 @@ grid-column: 1 / 2;
   height: 300px;
   z-index: 1;
   display: grid;
-  grid-template-rows:[r1] auto [r2] 170px [r3] 85px [r4];
+  grid-template-rows: [r1] auto [r2] 170px [r3] 85px [r4];
   place-items: center;
   padding: 0 15px;
 }
@@ -877,7 +879,7 @@ grid-column: 1 / 2;
   height: 300px;
   z-index: 1;
   display: grid;
-  grid-template-rows:[r1] auto [r2] 170px [r3] 85px [r4];
+  grid-template-rows: [r1] auto [r2] 170px [r3] 85px [r4];
   place-items: center;
   padding: 0 15px;
 }
@@ -971,7 +973,7 @@ grid-column: 1 / 2;
   background-color: var(--third-color);
   border-radius: 20px;
   display: grid;
-  grid-template-rows:[r1] auto [r2] 160px [r3] auto [r4] auto [r5];
+  grid-template-rows: [r1] auto [r2] 160px [r3] auto [r4] auto [r5];
   place-items: center;
 }
 
@@ -1262,11 +1264,11 @@ grid-column: 1 / 2;
   padding: 20px;
   grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
   grid-template-columns: [c1] 1fr [c2] 1fr [c3] 1fr [c4];
-  grid-template-areas: 
-  ". . ."
-  ". . ."
-  "fos fos fos"
-  "map map map";
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    "fos fos fos"
+    "map map map";
   gap: 20px;
 }
 
@@ -1285,6 +1287,7 @@ footer a:visited {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
+
 .quick_links {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -1293,6 +1296,7 @@ footer a:visited {
   width: 100%;
   height: 200px;
 }
+
 /* ? ---------------- конец стиля для быстрых ссылок ---------------- */
 
 /* ? ---------------- начало стиля для соц.сетей ---------------- */
@@ -1367,6 +1371,7 @@ footer a:visited {
   height: 40px;
   position: relative;
 }
+
 /* ? ---------------- конец стиля для соц.сетей ---------------- */
 
 /* ? ---------------- начало стиля для контактов ---------------- */
@@ -1374,6 +1379,7 @@ footer a:visited {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
 }
+
 #contacts {
   grid-column: 3 / 4;
   justify-self: start;
@@ -1405,6 +1411,7 @@ hr {
   margin: 20px 0;
   width: 75%;
 }
+
 /* ? ---------------- конец стиля для контактов ---------------- */
 
 /* ? ---------------- начало стиля для ФОС ---------------- */
@@ -1602,6 +1609,7 @@ hr {
   background-color: var(--third-color);
   width: 200px;
 }
+
 /* ? ---------------- конец стиля для ФОС ---------------- */
 
 /* ? ---------------- начало стиля для карты ---------------- */
@@ -1611,4 +1619,5 @@ hr {
   width: 100%;
   height: 400px;
 }
+
 /* ? ---------------- конец стиля для карты ---------------- */

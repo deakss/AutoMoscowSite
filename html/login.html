@@ -76,17 +76,17 @@
                 <form action="#" autocomplete="on" method="post">
                     <!-- ввод логина -->
                     <div class="container" id="logcont">
-                        <input required type="text" name="text" class="input" autofocus maxlength="20">
+                        <input required type="text" name="text" class="input" id="log" autofocus maxlength="20">
                         <label class="label">Введите логин</label>
                     </div>
                     <!-- ввод пароля -->
                     <div class="container" id="passcont">
-                        <input required type="password" name="text" class="input" maxlength="100">
+                        <input required type="password" name="text" class="input" id="pass" maxlength="100">
                         <label class="label">Введите пароль</label>
                     </div>
                     <!-- кнопка входа -->
                     <div class="container" id="butcont">
-                        <button class="buttons_link">Вход</button>
+                        <button class="buttons_link" type="button">Вход</button>
                     </div>
                     <!-- ссылка на страницу восстановление пароля -->
                     <div class="container" id="forgotcont">
@@ -102,6 +102,7 @@
     </main>
     <!-- подключение скриптов -->
     <script src="/js/burger.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>
