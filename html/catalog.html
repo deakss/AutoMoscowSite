@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- подключение стилей -->
+    <link rel="stylesheet" href="/css/cat_style.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/mobile_style.css">
-    <link rel="stylesheet" href="/css/cat_style.css">
     <!-- подключение шрифта -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,8 @@
 
 <body>
     <header>
-        <div>
+        <!-- ? START: header -->
+        <div id="sitecont">
             <!-- кнопка-ссылка на главную страницу в виде логотипа -->
             <button id="site" onclick="window.location.href='site.html';">
                 <img src="/images/LogoBl.png" alt="Logo">
@@ -38,14 +39,26 @@
             <!-- список уведомлений -->
             <ul class="notification-list">
                 <!-- элемент уведомления -->
-                <li><a href="https://auto.ru/cars/used/sale/skoda/octavia/1126243299-78f03bc2/">Skoda Octavia III со
-                        скидкой 10%🤑</a></li>
-                <li><a href="https://auto.ru/cars/used/sale/porsche/taycan/1126157803-ac285a5d/">Новинка - Porsche
-                        Taycan 4S 2021 года выпуска</a></li>
-                <li><a href="https://auto.ru/cars/used/sale/ford/mustang/1126197403-286606bf/">Ford Mustang 2023 года
-                        выпуска снова в продаже</a></li>
-                <li><a href="https://auto.ru/cars/used/sale/nissan/silvia/1106644939-b56e971d/">Японская классика: в
-                        продаже появился Nissan Silvia S15 1999 года выпуска</a></li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/skoda/octavia/1126243299-78f03bc2/">Skoda Octavia III со
+                        скидкой 10%🤑</a>
+                    <button class="del">✖</button>
+                </li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/porsche/taycan/1126157803-ac285a5d/">Новинка - Porsche
+                        Taycan 4S 2021 года выпуска</a>
+                    <button class="del">✖</button>
+                </li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/ford/mustang/1126197403-286606bf/">Ford Mustang 2023 года
+                        выпуска снова в продаже</a>
+                    <button class="del">✖</button>
+                </li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/nissan/silvia/1106644939-b56e971d/">Японская классика: в
+                        продаже появился Nissan Silvia S15 1999 года выпуска</a>
+                    <button class="del">✖</button>
+                </li>
             </ul>
         </div>
         <!-- бургер-меню -->
@@ -61,6 +74,7 @@
             <a id="favourite" href='favourite.html'>Избранное</a>
             <a id="orders" href='orders.html'>Заказы</a>
             <a id="gallery" href="gallery.html">Галерея</a>
+            <button id="add_car_btn" class="buttons">Добавить автомобиль</button>
             <!-- кнопки входа и регистрации -->
             <button class="buttons" id="log" onclick="window.location.href='login.html';">Авторизация</button>
         </nav>
@@ -78,19 +92,19 @@
                 <div class="radiobuttons">
                     <label class="label_cat">
                         <input type="radio" id="price_asc" checked="" name="value-sort" value="pr_asc" />
-                        <p class="text">По цене ↑</p>
+                        <p class="text">Цена ↑</p>
                     </label>
                     <label class="label_cat">
                         <input type="radio" id="price_desc" name="value-sort" value="pr_desc" />
-                        <p class="text">По цене ↓</p>
+                        <p class="text">Цена ↓</p>
                     </label>
                     <label class="label_cat">
                         <input type="radio" id="name_asc" name="value-sort" value="nm_asc" />
-                        <p class="text">По названию ↑</p>
+                        <p class="text">Название ↑</p>
                     </label>
                     <label class="label_cat">
                         <input type="radio" id="name_desc" name="value-sort" value="nm_desc" />
-                        <p class="text">По названию ↓</p>
+                        <p class="text">Название ↓</p>
                     </label>
                 </div>
             </div>
@@ -100,7 +114,7 @@
                 <div class="makers">
                     <p class="text">Марка</p>
                     <label class="label_cat">
-                        <input type="radio" id="make_all" name="value-make" value="all" />
+                        <input type="radio" id="make_all" name="value-make" value="" />
                         <p class="text">Все</p>
                     </label>
                     <label class="label_check">
@@ -132,12 +146,12 @@
                 <div class="colors">
                     <p class="text">Цвет</p>
                     <label class="label_cat">
-                        <input type="radio" id="color_all" name="value-col" value="col_all" />
+                        <input type="radio" id="color_all" name="value-col" value="" />
                         <p class="text">Все</p>
                     </label>
                     <label class="label_check">
                         <div>
-                            <input type="checkbox" id="col_1" name="value-col" value="value-wh" />
+                            <input type="checkbox" id="col_1" name="value-col" value="белый" />
                             <div class="check"></div>
                         </div>
                         <p class="text">Белый</p>
@@ -145,7 +159,7 @@
                     </label>
                     <label class="label_check">
                         <div>
-                            <input type="checkbox" id="col_2" name="value-col" value="value-bl" />
+                            <input type="checkbox" id="col_2" name="value-col" value="чёрный" />
                             <div class="check"></div>
                         </div>
                         <p class="text">Черный</p>
@@ -153,7 +167,7 @@
                     </label>
                     <label class="label_check">
                         <div>
-                            <input type="checkbox" id="col_3" name="value-col" value="value-rd" />
+                            <input type="checkbox" id="col_3" name="value-col" value="красный" />
                             <div class="check"></div>
                         </div>
                         <p class="text">Красный</p>
@@ -192,6 +206,8 @@
                             </svg>
                         </div>
                     </div>
+                    <button class="buttons" id="edit_car_button">Редактировать</button>
+                    <button class="buttons" id="delete_car_button">Удалить</button>
                     <button class="buttons" id="add_to_cart">Добавить в корзину</button>
                 </a>
                 <a class="car_card">
@@ -223,6 +239,8 @@
                             </svg>
                         </div>
                     </div>
+                    <button class="buttons" id="edit_car_button">Редактировать</button>
+                    <button class="buttons" id="delete_car_button">Удалить</button>
                     <button class="buttons" id="add_to_cart">Добавить в корзину</button>
                 </a>
                 <a class="car_card">
@@ -254,6 +272,8 @@
                             </svg>
                         </div>
                     </div>
+                    <button class="buttons" id="edit_car_button">Редактировать</button>
+                    <button class="buttons" id="delete_car_button">Удалить</button>
                     <button class="buttons" id="add_to_cart">Добавить в корзину</button>
                 </a>
                 <a class="car_card">
@@ -285,11 +305,13 @@
                             </svg>
                         </div>
                     </div>
+                    <button class="buttons" id="edit_car_button">Редактировать</button>
+                    <button class="buttons" id="delete_car_button">Удалить</button>
                     <button class="buttons" id="add_to_cart">Добавить в корзину</button>
                 </a>
                 <a class="car_card">
                     <img src="/images/cslclass.png">
-                    <h4 class="make_mod_year">Mercedes Benz CSL-class 2016</h4>
+                    <h4 class="make_mod_year">Mercedes Benz CLS 2016</h4>
                     <p class="mileage">Пробег: 5.000км</p>
                     <p class="car_color">Цвет: белый</p>
                     <p class="car_price">Цена: 5.500.000₽</p>
@@ -316,6 +338,8 @@
                             </svg>
                         </div>
                     </div>
+                    <button class="buttons" id="edit_car_button">Редактировать</button>
+                    <button class="buttons" id="delete_car_button">Удалить</button>
                     <button class="buttons" id="add_to_cart">Добавить в корзину</button>
                 </a>
             </div>
@@ -428,6 +452,7 @@
     <!-- подключение скриптов -->
     <script src="/js/burger.js"></script>
     <script src="/js/cat.js"></script>
+
 </body>
 
 </html>

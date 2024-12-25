@@ -23,6 +23,7 @@
 
 <body>
     <header>
+        <!-- ? START: header -->
         <div id="sitecont">
             <!-- кнопка-ссылка на главную страницу в виде логотипа -->
             <button id="site" onclick="window.location.href='site.html';">
@@ -39,14 +40,26 @@
             <!-- список уведомлений -->
             <ul class="notification-list">
                 <!-- элемент уведомления -->
-                <li><a href="https://auto.ru/cars/used/sale/skoda/octavia/1126243299-78f03bc2/">Skoda Octavia III со
-                        скидкой 10%🤑</a></li>
-                <li><a href="https://auto.ru/cars/used/sale/porsche/taycan/1126157803-ac285a5d/">Новинка - Porsche
-                        Taycan 4S 2021 года выпуска</a></li>
-                <li><a href="https://auto.ru/cars/used/sale/ford/mustang/1126197403-286606bf/">Ford Mustang 2023 года
-                        выпуска снова в продаже</a></li>
-                <li><a href="https://auto.ru/cars/used/sale/nissan/silvia/1106644939-b56e971d/">Японская классика: в
-                        продаже появился Nissan Silvia S15 1999 года выпуска</a></li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/skoda/octavia/1126243299-78f03bc2/">Skoda Octavia III со
+                        скидкой 10%🤑</a>
+                    <button class="del">✖</button>
+                </li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/porsche/taycan/1126157803-ac285a5d/">Новинка - Porsche
+                        Taycan 4S 2021 года выпуска</a>
+                    <button class="del">✖</button>
+                </li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/ford/mustang/1126197403-286606bf/">Ford Mustang 2023 года
+                        выпуска снова в продаже</a>
+                    <button class="del">✖</button>
+                </li>
+                <li>
+                    <a href="https://auto.ru/cars/used/sale/nissan/silvia/1106644939-b56e971d/">Японская классика: в
+                        продаже появился Nissan Silvia S15 1999 года выпуска</a>
+                    <button class="del">✖</button>
+                </li>
             </ul>
         </div>
         <!-- бургер-меню -->
@@ -66,7 +79,7 @@
             <button class="buttons" id="log" onclick="window.location.href='login.html';">Авторизация</button>
         </nav>
     </header>
-    
+
     <main id="login">
         <!-- форма входа -->
         <div class="login_box">

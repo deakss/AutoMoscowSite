@@ -90,42 +90,4 @@ document.addEventListener('DOMContentLoaded', function () {
         // обновляем видимость кнопок
         updateButtons();
     });
-
-    // получаем элементы меню
-    const burgerMenu = document.querySelector('.burger-menu');
-    const headerNav = document.querySelector('.header-nav');
-
-    // если элементы найдены
-    if (burgerMenu && headerNav) {
-        // обрабатываем клик по бургер-меню
-        burgerMenu.addEventListener('click', function () {
-            // добавляем класс active, показываем меню
-            this.classList.toggle('active');
-            headerNav.classList.toggle('active');
-        });
-
-        // закрытие меню при клике на пункт меню
-        // получаем все элементы навигации
-        const menuItems = headerNav.querySelectorAll('a, button');
-        // проходимся по каждому элементу
-        menuItems.forEach(item => {
-            // обрабатываем клик по элементу навигации
-            item.addEventListener('click', () => {
-                // удаляем класс active, скрываем меню
-                burgerMenu.classList.remove('active');
-                headerNav.classList.remove('active');
-            });
-        });
-
-        // закрытие меню при клике вне его
-        // обработчик клика вне меню
-        document.addEventListener('click', function (event) {
-            // если клик был не в меню и не по бургер-меню
-            if (!headerNav.contains(event.target) && !burgerMenu.contains(event.target)) {
-                // удаляем класс active
-                burgerMenu.classList.remove('active');
-                headerNav.classList.remove('active');
-            }
-        });
-    }
 });

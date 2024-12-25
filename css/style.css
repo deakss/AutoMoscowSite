@@ -85,7 +85,17 @@ header {
 /* стиль иконки уведомлений */
 #notification .icon {
   font-size: 24px;
+  margin-left: 20px;
   transition: opacity 0.3s ease;
+}
+
+.add_notif {
+  pointer-events: none;
+  background-color: var(--transp-back-color);
+  border-radius: 100%;
+  width: auto;
+  visibility: hidden;
+  color: var(--text-color);
 }
 
 /* стиль количества уведомлений */
@@ -119,6 +129,17 @@ header {
   transform: none;
 }
 
+/* иконка уведомлений при наведении */
+.notification-container:hover #notification .icon {
+  margin-left: 0;
+}
+
+/* иконка уведомлений при наведении */
+.notification-container:hover .add_notif {
+  visibility: visible;
+  pointer-events: auto;
+}
+
 /* список уведомлений */
 .notification-list {
   display: none;
@@ -147,12 +168,30 @@ header {
   color: var(--text-color);
   border-bottom: 1px solid #f0f0f0;
   cursor: pointer;
+  display: grid;
+  grid-template-columns: [c1] 90% [c2] 10% [c3];
 }
-
 
 /* стили для ссылок */
 .notification-list li a {
   color: var(--main-color);
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  justify-self: start;
+  align-self: center;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.notification-list li button {
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(237, 242, 244);
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: end;
+  width: 100%;
 }
 
 /* стили для посещённых ссылок */
@@ -175,7 +214,7 @@ header nav {
   display: grid;
   grid-row: 1 / 2;
   grid-column: 3 / 4;
-  grid-template-columns: [cc1] auto [cc2] auto [cc3] auto [cc4] auto [cc5] auto [cc6] 150px [cc7];
+  grid-template-columns: [cc1] auto [cc2] auto [cc3] auto [cc4] auto [cc5] auto [cc6] auto [cc7] 150px [cc8];
   place-items: center;
   justify-self: stretch;
   grid-gap: 20px;
@@ -262,8 +301,12 @@ header button {
   width: 150px;
 }
 
-#log {
+#add_car_btn {
   grid-column: 6 / 7;
+}
+
+#log {
+  grid-column: 7 / 8;
 }
 
 /* Стили для бургер-меню */
