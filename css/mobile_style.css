@@ -12,7 +12,15 @@
     /* ? start: header */
     /* стиль для header */
     header {
-        grid-template-columns: [c1] 80px [c2] 200px [c3] auto [c4];
+        grid-template-columns: [c1] 80px [c2] auto [c3] auto [c4];
+    }
+
+    header button {
+        width: 120px;
+    }
+
+    .header-nav {
+        overflow: hidden;
     }
 
     /* количество уведомлений при наведении */
@@ -35,10 +43,6 @@
         justify-self: stretch;
         grid-gap: 20px;
         text-align: center;
-    }
-
-    header button {
-        width: auto;
     }
 
     /* ? end: header */
@@ -170,6 +174,114 @@
     /* ? start: registration */
 
     /* ? end: registration */
+
+    /* ? start: catalog */
+
+    .cat-container {
+        display: grid;
+        grid-template-columns: [c1] 2fr [c2] 2fr [c3] 1fr [c4];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4];
+    }
+
+    .search_panel {
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+        row-gap: 10px;
+    }
+
+    .radiobuttons {
+        grid-row: 2 / 3;
+    }
+
+    .radiobuttons .label_cat p {
+        font-size: 14px;
+    }
+
+    .filter_panel {
+        grid-row: 2 / 3;
+        grid-column: 1 / 4;
+    }
+
+
+    .catalog {
+        grid-row: 3 / 4;
+        grid-column: 1 / 3;
+    }
+
+    .cart_panel {
+        grid-row: 3 / 4;
+        grid-column: 3 / 4;
+    }
+
+    .car_card {
+        grid-template-columns: [c1] 1fr [c2] 2fr [c3] 1fr [c4] 1fr [c5];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
+        column-gap: 14px;
+    }
+
+    .car_card img {
+        width: 100%;
+        grid-row: 1 / 5;
+    }
+
+    .car_card .make_mod_year {
+        grid-row: 1 / 2;
+        grid-column: 2 / 5;
+        text-align: left;
+        justify-self: start;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .car_card .mileage {
+        grid-row: 2 / 3;
+        justify-self: start;
+        grid-column: 2 / 4;
+        cursor: pointer;
+    }
+
+    .car_card .car_color {
+        grid-row: 3 / 4;
+        grid-column: 2 / 4;
+        justify-self: start;
+        cursor: pointer;
+    }
+
+    .car_card .car_price {
+        grid-row: 4 / 5;
+        grid-column: 2 / 4;
+        justify-self: start;
+        cursor: pointer;
+    }
+
+    .car_card .heart-container {
+        width: 30px;
+        height: 30px;
+    }
+
+    .car_card #add_to_cart {
+        width: 100%;
+        font-size: 12px;
+        height: 30px;
+    }
+
+    .car_card #edit_car_button {
+        grid-row: 1 / 2;
+        grid-column: 4 / 5;
+        font-size: 12px;
+        height: 20px;
+        width: 100%;
+    }
+
+    .car_card #delete_car_button {
+        grid-row: 2 / 3;
+        grid-column: 4 / 5;
+        font-size: 12px;
+        height: 20px;
+        width: 100%;
+    }
+
+    /* ? end: catalog */
 }
 
 /* ! -------------------------------------------- медиа-запрос для планшетов --------------------------------------- */
@@ -236,6 +348,11 @@
     /* иконка уведомлений */
     #notification .icon {
         font-size: 20px;
+        margin-left: 10px;
+    }
+
+    .notification-list li button {
+        font-size: 11px;
     }
 
     /* количество уведомлений */
@@ -918,6 +1035,114 @@
     }
 
     /* ? end: registration */
+
+    /* ? start: catalog */
+
+    .cat-container {
+        display: grid;
+        grid-template-columns: [c1] auto [c2];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
+    }
+
+    .search_panel {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        row-gap: 10px;
+    }
+
+    .radiobuttons {
+        grid-row: 2 / 3;
+    }
+
+    .radiobuttons .label_cat p {
+        font-size: 14px;
+    }
+
+    .filter_panel {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+
+    .catalog {
+        grid-row: 4 / 5;
+        grid-column: 1 / 1;
+    }
+
+    .cart_panel {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    .car_card {
+        grid-template-columns: [c1] 1fr [c2] 2fr [c3] 1fr [c4] 1fr [c5];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
+        column-gap: 14px;
+    }
+
+    .car_card img {
+        width: 100%;
+        grid-row: 1 / 5;
+    }
+
+    .car_card .make_mod_year {
+        grid-row: 1 / 2;
+        grid-column: 2 / 5;
+        text-align: left;
+        justify-self: start;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .car_card .mileage {
+        grid-row: 2 / 3;
+        justify-self: start;
+        grid-column: 2 / 4;
+        cursor: pointer;
+    }
+
+    .car_card .car_color {
+        grid-row: 3 / 4;
+        grid-column: 2 / 4;
+        justify-self: start;
+        cursor: pointer;
+    }
+
+    .car_card .car_price {
+        grid-row: 4 / 5;
+        grid-column: 2 / 4;
+        justify-self: start;
+        cursor: pointer;
+    }
+
+    .car_card .heart-container {
+        width: 30px;
+        height: 30px;
+    }
+
+    .car_card #add_to_cart {
+        width: 100%;
+        font-size: 12px;
+        height: 30px;
+    }
+
+    .car_card #edit_car_button {
+        grid-row: 1 / 2;
+        grid-column: 4 / 5;
+        font-size: 12px;
+        height: 20px;
+        width: 100%;
+    }
+
+    .car_card #delete_car_button {
+        grid-row: 2 / 3;
+        grid-column: 4 / 5;
+        font-size: 12px;
+        height: 20px;
+        width: 100%;
+    }
+
+    /* ? end: catalog */
 }
 
 /* ! -------------------------------------------- медиа-запрос для телефонов --------------------------------------- */
@@ -984,6 +1209,7 @@
     /* иконка уведомлений */
     #notification .icon {
         font-size: 20px;
+        margin-left: 10px;
     }
 
     /* количество уведомлений */
@@ -1020,6 +1246,10 @@
 
     /* элемент списка уведомлений */
     .notification-list li a {
+        font-size: 11px;
+    }
+
+    .notification-list li button {
         font-size: 11px;
     }
 
@@ -1582,4 +1812,123 @@
     }
 
     /* ? end: registration */
+
+    /* ? start: catalog */
+
+    .cat-container {
+        display: grid;
+        grid-template-columns: [c1] auto [c2];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
+    }
+
+    .search_panel {
+        grid-template-rows: [r1] auto [r2] auto [r3];
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        row-gap: 10px;
+    }
+
+    .searchbox {
+        grid-row: 1 / 2;
+    }
+
+    #que {
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    .radiobuttons {
+        grid-row: 2 / 3;
+        font-size: 12px;
+    }
+
+    .radiobuttons .label_cat p {
+        font-size: 10px;
+    }
+
+    .filter_panel {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+
+    .catalog {
+        grid-row: 4 / 5;
+        grid-column: 1 / 1;
+    }
+
+    .cart_panel {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    .car_card {
+        grid-template-columns: [c1] 1fr [c2] 2fr [c3] 1fr [c4] 1fr [c5];
+        grid-template-rows: [r1] auto [r2] auto [r3] auto [r4] auto [r5];
+        column-gap: 10px;
+    }
+
+    .car_card img {
+        width: 100%;
+        grid-row: 1 / 5;
+    }
+
+    .car_card .make_mod_year {
+        grid-row: 1 / 2;
+        grid-column: 2 / 5;
+        text-align: left;
+        justify-self: start;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    .car_card .mileage {
+        grid-row: 2 / 3;
+        justify-self: start;
+        grid-column: 2 / 4;
+        cursor: pointer;
+    }
+
+    .car_card .car_color {
+        grid-row: 3 / 4;
+        grid-column: 2 / 4;
+        justify-self: start;
+        cursor: pointer;
+    }
+
+    .car_card .car_price {
+        grid-row: 4 / 5;
+        grid-column: 2 / 4;
+        justify-self: start;
+        cursor: pointer;
+    }
+
+    .car_card .heart-container {
+        width: 30px;
+        height: 30px;
+    }
+
+    .car_card #add_to_cart {
+        width: 100%;
+        font-size: 9px;
+        height: 30px;
+    }
+
+    .car_card #edit_car_button {
+        grid-row: 1 / 2;
+        grid-column: 4 / 5;
+        font-size: 10px;
+        height: 20px;
+        width: 100%;
+    }
+
+    .car_card #delete_car_button {
+        grid-row: 2 / 3;
+        grid-column: 4 / 5;
+        font-size: 10px;
+        height: 20px;
+        width: 100%;
+    }
+
+    /* ? end: catalog */
 }
